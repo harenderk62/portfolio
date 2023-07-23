@@ -1,0 +1,53 @@
+.connect-page {
+  padding: 3rem 5rem 3rem 20rem;
+  background-color: #fafafa;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .header {
+    margin: 0.5rem;
+    text-align: center;
+    font-size: 3rem;
+    font-weight: bold;
+  }
+}
+
+.contact-form {
+  padding: 0 5rem 0rem 20rem;
+  max-width: 50rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+
+  .head {
+    text-align: center;
+  }
+
+  .contact-input {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+
+    input {
+      width: 100%;
+      height: 2rem;
+    }
+  }
+
+  .message-section {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    input {
+      width: 100%;
+      height: 10rem;
+    }
+  }
+}
+
+.email {
+  cursor: pointer;
+}

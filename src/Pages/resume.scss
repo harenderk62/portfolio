@@ -1,0 +1,120 @@
+.resume-page {
+  padding: 3rem 5rem 3rem 20rem;
+  background-color: #fafafa;
+
+  .header {
+    margin: 2rem;
+    text-align: center;
+    font-size: 3rem;
+    font-weight: bold;
+  }
+}
+
+.resume-container {
+  padding: 3rem 5rem 3rem 20rem;
+
+  .btn {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .resume {
+    margin: 20px 0;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    padding: 2rem 3rem;
+
+    .resume-top {
+      margin-bottom: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .top-left {
+        h1 {
+          margin: 0;
+          font-size: 3rem;
+          font-weight: bold;
+          color: #54b689;
+          letter-spacing: 0.3rem;
+        }
+
+        p {
+          margin: 0;
+          font-size: 1.5rem;
+          color: grey;
+        }
+      }
+
+      .top-right {
+        border-left: 1px solid #5e5d5d;
+
+        ul {
+          margin: 0;
+          list-style: none;
+          display: flex;
+          flex-direction: column;
+          gap: 0.8rem;
+        }
+      }
+    }
+
+    .profile {
+      margin: 2rem 0;
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+
+      img {
+        width: 150px;
+      }
+    }
+
+    // experience section
+    .experience {
+      .company-detail {
+        display: flex;
+        justify-content: space-between;
+
+        .company {
+          font-size: 1.2rem;
+        }
+      }
+    }
+
+    // recoginations
+    .recoginations {
+    }
+
+    // certifications
+    .certifications {
+    }
+
+    // skills
+    .skills {
+      .sk-cont {
+        .row {
+          display: flex;
+          justify-content: flex-start;
+          gap: 20px;
+
+          .topic {
+            font-size: 1.1rem;
+            font-weight: bold;
+          }
+        }
+      }
+    }
+  }
+}
+
+.section-title {
+  margin: 0;
+  padding: 0.3rem;
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #fff;
+  background-color: #54b689;
+  border: none;
+  border-radius: 5px;
+}

@@ -1,63 +1,63 @@
 // Custom Button
 
-.btn{
-    button{
-        padding: 0.5rem 1rem;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 10px;
-        font-size: 15px;
-        font-weight: bold;
-        letter-spacing: 0.02rem;
-        word-spacing: 0.1rem;
-        border: none;
-        border-radius: 10px;
-        cursor: pointer;
+.btn {
+  button {
+    padding: 0.7rem 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-size: 15px;
+    font-weight: bold;
+    letter-spacing: 0.02rem;
+    word-spacing: 0.1rem;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
 
-        img{
-            width: 25px;
-        }
+    img {
+      width: 20px;
     }
+  }
 }
 
-.grn-btn{
-    color: #fff;
-    background-color: #54B689;
-    box-shadow: 0 4px 9px rgba(12,12,16,.2);
+.grn-btn {
+  color: #fff;
+  background-color: #54b689;
+  box-shadow: 0 4px 9px rgba(12, 12, 16, 0.2);
 
-    &:hover{
-        background-color: #266347;
-    }
+  &:hover {
+    background-color: #266347;
+  }
 }
 
-.drk-btn{
-    color: #fff;
-    background-color: #4f4f4f;
+.drk-btn {
+  color: #fff;
+  background-color: #4f4f4f;
 
-    &:hover{
-        background-color: #2f2e2e;
-    }
+  &:hover {
+    background-color: #2f2e2e;
+  }
 }
 
 // Custom Card
 
-.card{
-    max-width:250px ;
-    margin: 2rem 1rem ;
+.card {
+  max-width: 250px;
+  margin: 2rem 1rem;
 
-    img{
-        width: 3rem;
-        height: 3rem;
-    }
+  img {
+    width: 3rem;
+    height: 3rem;
+  }
 
-    .cardTitle{
-        margin: 0;
-        font-size: 1.3rem;
-        font-weight: bold;
-    }
+  .cardTitle {
+    margin: 0;
+    font-size: 1.3rem;
+    font-weight: bold;
+  }
 
-    .cardBody{
-        font-size: 0.9rem;
-    }
+  .cardBody {
+    font-size: 0.9rem;
+  }
 }

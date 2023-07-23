@@ -1,11 +1,9 @@
-import SideNav from "./SideNav";
-import AboutMe from "./Pages/about";
+import Router from "./Router";
 
 const App = () => {
   return (
     <>
-      <SideNav />
-      <AboutMe />
+      <Router />
     </>
   );
 };

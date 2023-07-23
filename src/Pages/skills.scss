@@ -1,0 +1,44 @@
+.skl {
+  .skills-page {
+    padding: 3rem 5rem 3rem 20rem;
+    background-color: #fafafa;
+
+    .header {
+      margin: 2rem;
+      text-align: center;
+      font-size: 3rem;
+      font-weight: bold;
+    }
+    .btn {
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  .skills-bar {
+    padding: 3rem 5rem 3rem 20rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+
+    .progressBar {
+      position: relative;
+
+      .indicator-volume {
+        display: flex;
+        flex-direction: column;
+        // justify-content: center;
+        align-items: center;
+        position: absolute;
+        top: 80px;
+        left: 70px;
+        font-size: 1rem;
+        font-weight: bold;
+
+        p {
+          margin: 0;
+        }
+      }
+    }
+  }
+}
