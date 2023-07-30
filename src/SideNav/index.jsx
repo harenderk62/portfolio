@@ -2,7 +2,7 @@ import { useState, useMemo } from "react";
 import { useNavigate } from "react-router-dom";
 
 // Redirect Images
-import User from "../assets/user.png";
+import User from "../assets/myself.png";
 import LinkedIn from "../assets/linkedIn.svg";
 import Github from "../assets/github.svg";
 import Youtube from "../assets/youtube.svg";

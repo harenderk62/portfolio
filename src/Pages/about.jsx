@@ -2,7 +2,7 @@ import { useMemo } from "react";
 import Button from "../Components/button";
 import Card from "../Components/card";
 import ProgressBar from "react-customizable-progressbar";
-import User from "../assets/user.png";
+import User from "../assets/myself.png";
 import Arrow from "../assets/arrow.svg";
 import ResumeLogo from "../assets/ListIcon/resume.svg";
 import "./about.scss";

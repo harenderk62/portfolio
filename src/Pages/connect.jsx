@@ -30,17 +30,36 @@ const Connect = () => {
       <div className="contact-form">
         <p className="head">Get In Touch</p>
         <div className="contact-input">
-          <input type="text" placeholder="Name" />
-          <input type="text" placeholder="email" />
+          <label for="inp" class="inp">
+            <input type="text" id="inp" placeholder="&nbsp;" />
+            <span class="label">Name</span>
+            <span class="focus-bg"></span>
+          </label>
+
+          <label for="inp" class="inp">
+            <input type="email" id="inp" placeholder="&nbsp;" />
+            <span class="label">Email</span>
+            <span class="focus-bg"></span>
+          </label>
         </div>
         <div className="message-section">
-          <textarea rows="10" cols="40" placeholder="Enter your message" />
+          {/* <textarea
+            className="customInput"
+            rows="10"
+            cols="40"
+            placeholder="Enter your message"
+          /> */}
+          <label for="inp" class="customInput">
+            <textarea rows="10" cols="40" id="inp" placeholder="&nbsp;" />
+            <span class="label">Enter your message</span>
+            <span class="focus-bg"></span>
+          </label>
           <Button
             className="grn-btn"
             img={Send}
             type="button"
             onClick={buttonHandler}
-            btnName="Lets connect"
+            btnName="Send"
           />
         </div>
       </div>
