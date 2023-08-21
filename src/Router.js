@@ -5,12 +5,16 @@ import Skills from "./Pages/skills";
 import Resume from "./Pages/resume";
 import Certificate from "./Pages/certificate";
 import Connect from "./Pages/connect";
-import SideNav from "./SideNav";
+import SideNav from "./SideNav/index";
+import MobileNav from "./SideNav/indexMobile";
+import { useMediaQuery } from "react-responsive";
 
 const App = () => {
+  const isMobile = useMediaQuery({ maxWidth: 768 });
+
   return (
     <BrowserRouter>
-      <SideNav />
+      {isMobile ? <MobileNav /> : <SideNav />}
       <Routes>
         <Route path="/" Component={AboutMe} />
         <Route path="/portfolio" Component={Portfolio} />

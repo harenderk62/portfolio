@@ -260,7 +260,7 @@ const AboutMe = () => {
         </div>
       </div>
 
-      <div className="expContainer">
+      <div className="subContainer">
         <h3>Experience</h3>
         {/* <p>
           I have more than 1 year' experience building software for clients all
@@ -288,7 +288,7 @@ const AboutMe = () => {
 
       {/* Education */}
 
-      <div className="expContainer">
+      <div className="subContainer">
         <h3>Education</h3>
         {/* <p>
           I have completed my B.Tech from 
@@ -313,7 +313,7 @@ const AboutMe = () => {
 
       {/* Licenses */}
 
-      <div className="certiContainer">
+      <div className="subContainer">
         <h3>Licenses & Certifications</h3>
         {/* <p>
           I have completed my B.Tech from 
@@ -342,7 +342,7 @@ const AboutMe = () => {
 
       {/* Projects */}
 
-      <div className="certiContainer">
+      <div className="subContainer">
         <h3>Projects</h3>
         {/* <p>
           I have completed my B.Tech from 
@@ -362,7 +362,7 @@ const AboutMe = () => {
         </button>
       </div>
 
-      <div className="skills-section">
+      <div className="subContainer">
         <h3>Skills</h3>
         <p>
           I am proficient in a variety of programming languages including
@@ -379,11 +379,11 @@ const AboutMe = () => {
             <div className="skill-row" key={index}>
               <p className="topic">{value}</p>
               <div className="skillsGroup">
-              {skills[value].map((skill, arrayIndex) => (
-                <p className="skill" key={arrayIndex}>
-                  {skill}
-                </p>
-              ))}
+                {skills[value].map((skill, arrayIndex) => (
+                  <p className="skill" key={arrayIndex}>
+                    {skill}
+                  </p>
+                ))}
               </div>
             </div>
           ))}
@@ -392,47 +392,52 @@ const AboutMe = () => {
 
       {/* Publications */}
 
-      <div className="publicationSection">
+      <div className="subContainer">
         <h3>Publications</h3>
         <div className="publication">
           <p className="pubTitle">
-          Extractive Text Summarization Using Natural Language Processing (NLP)
+            Extractive Text Summarization Using Natural Language Processing
+            (NLP)
           </p>
-          <p className="pubAbout">focuses on the application of Natural Language Processing (NLP) techniques for extractive text summarization, providing a streamlined approach to summarize large volumes of textual data.</p>
+          <p className="pubAbout">
+            focuses on the application of Natural Language Processing (NLP)
+            techniques for extractive text summarization, providing a
+            streamlined approach to summarize large volumes of textual data.
+          </p>
         </div>
       </div>
 
       {/* Honors and awards */}
-      
-      <div className="awardSection">
+
+      <div className="subContainer">
         <h3>Honors & awards</h3>
         <div className="awardsContainer">
           <div className="award">
-          <p className="awardTitle">
-                National Standard Examination in Physics (IAPT)
-          </p>
-          <p className="awardAbout">Rank 3 in my Center and among the Top 10%</p>
+            <p className="awardTitle">
+              National Standard Examination in Physics (IAPT)
+            </p>
+            <p className="awardAbout">
+              Rank 3 in my Center and among the Top 10%
+            </p>
           </div>
           <div className="award">
-          <p className="awardTitle">
-                National Children's Science Congress
-          </p>
-          <p className="awardAbout">Represent my school at Regional level and got the certificate of Outstanding presentation </p>
+            <p className="awardTitle">National Children's Science Congress</p>
+            <p className="awardAbout">
+              Represent my school at Regional level and got the certificate of
+              Outstanding presentation{" "}
+            </p>
           </div>
           <div className="award">
-          <p className="awardTitle">
-                Jee Mains
-          </p>
-          <p className="awardAbout">Under Top 3 percentile</p>
+            <p className="awardTitle">Jee Mains</p>
+            <p className="awardAbout">Under Top 3 percentile</p>
           </div>
         </div>
       </div>
 
       <div className="footer">
-                <p>Copyright Harender Kumar</p>
-                <p>Made with Love</p>
+        <p>Copyright Harender Kumar</p>
+        <p>Made with Love</p>
       </div>
-
     </div>
   );
 };
