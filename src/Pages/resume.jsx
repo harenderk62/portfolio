@@ -2,6 +2,7 @@ import { useMemo } from "react";
 import Button from "../Components/button";
 import Send from "../assets/send.svg";
 import User from "../assets/user.png";
+import Footer from "../Components/footer";
 import ResumeLogo from "../assets/ListIcon/resume.svg";
 import "./resume.scss";
 
@@ -30,7 +31,7 @@ const Resume = () => {
               <ul>
                 <li>+91 7048941490</li>
                 <li>harenderk62@gmail.com</li>
-                <li>www.harender.dev</li>
+                <li>www.harender.in</li>
                 <li>India</li>
               </ul>
             </div>
@@ -195,6 +196,7 @@ const Resume = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 };

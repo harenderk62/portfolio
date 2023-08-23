@@ -4,7 +4,7 @@ import Card from "../Components/card";
 import ExpCard from "../Components/expCard";
 import CertiCard from "../Components/certiCard";
 import ProjectCard from "../Components/projectCard";
-import ProgressBar from "react-customizable-progressbar";
+import Footer from "../Components/footer";
 import User from "../assets/myself.png";
 import Arrow from "../assets/arrow.svg";
 import ResumeLogo from "../assets/ListIcon/resume.svg";
@@ -127,7 +127,7 @@ const AboutMe = () => {
       from: "Jun 2022",
       to: "Present",
       location: "Mumbai, Maharashtra, India",
-      skills: ["React", "Js", "Git"],
+      skills: ["ReactJs", "NodeJs", "Git", "MongoDB", "MySQL", "AWS"],
     },
     {
       img: Accenture,
@@ -137,7 +137,7 @@ const AboutMe = () => {
       from: "Jan 2022",
       to: "Jun 2022",
       location: "Bangalore Urban, Karnataka, India",
-      skills: [],
+      skills: ["Python", "Excel", "Pandas", "numpy"],
     },
     {
       img: Chattel,
@@ -147,7 +147,7 @@ const AboutMe = () => {
       from: "May 2021",
       to: "Aug 2021",
       location: "Bangalore Urban, Karnataka, India",
-      skills: [],
+      skills: ["ReactJs", "NodeJs", "MongoDB", "MySQL"],
     },
   ];
 
@@ -160,7 +160,7 @@ const AboutMe = () => {
       from: "2018",
       to: "2022",
       location: "",
-      skills: [],
+      skills: ["Computer Science", "Mathematics"],
     },
   ];
 
@@ -433,11 +433,7 @@ const AboutMe = () => {
           </div>
         </div>
       </div>
-
-      <div className="footer">
-        <p>Copyright Harender Kumar</p>
-        <p>Made with Love</p>
-      </div>
+      <Footer />
     </div>
   );
 };

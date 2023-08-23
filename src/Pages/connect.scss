@@ -25,6 +25,7 @@ $dark: #000;
   gap: 15px;
 
   .head {
+    font-weight: bold;
     text-align: center;
   }
 
@@ -199,6 +200,30 @@ $dark: #000;
           transition: all 0.1s ease;
         }
       }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .connect-page {
+    padding: 1rem;
+
+    .header {
+      margin: 0;
+      font-size: 2rem;
+    }
+  }
+
+  .contact-form {
+    padding: 1rem;
+    gap: 10px;
+
+    .contact-input {
+      flex-direction: column;
+    }
+
+    .message-section {
+      gap: 10px;
     }
   }
 }

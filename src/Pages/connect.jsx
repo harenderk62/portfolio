@@ -1,6 +1,7 @@
 import { useMemo } from "react";
 import Button from "../Components/button";
 import Send from "../assets/send.svg";
+import Footer from "../Components/footer";
 import ResumeLogo from "../assets/ListIcon/resume.svg";
 import "./connect.scss";
 
@@ -10,7 +11,7 @@ const Connect = () => {
     <>
       <div className="connect-page">
         <p className="header">Connect</p>
-        <p>
+        <p className="header-Para">
           Interested in hiring me or just want to say Hi? You can fill in the
           contact form below or send me an email to{" "}
           <span className="email">harenderk62@gmail.com</span>
@@ -63,6 +64,7 @@ const Connect = () => {
           />
         </div>
       </div>
+      <Footer />
     </>
   );
 };

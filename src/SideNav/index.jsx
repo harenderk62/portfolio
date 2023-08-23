@@ -44,9 +44,14 @@ const SideNav = () => {
     []
   );
 
-  const [activeTab, setActiveTab] = useState("About Me");
+  var activeTabFromSession = sessionStorage.getItem("activeTab");
+
+  const [activeTab, setActiveTab] = useState(
+    activeTabFromSession ? activeTabFromSession : "About Me"
+  );
 
   const activeTabHandler = (tab) => {
+    sessionStorage.setItem("activeTab", tab);
     setActiveTab(tab);
 
     let menuItem = menuItems.find((obj) => obj.name === tab);

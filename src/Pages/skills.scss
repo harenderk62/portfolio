@@ -42,3 +42,25 @@
     }
   }
 }
+
+@media screen and (max-width: 768px) {
+  .skl {
+    .skills-page {
+      padding: 1rem;
+
+      .header {
+        margin: 0;
+        font-size: 2rem;
+      }
+
+      .header-Para {
+        font-size: 0.9rem;
+      }
+    }
+
+    .skills-bar {
+      padding: 1rem;
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}

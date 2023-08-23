@@ -110,6 +110,12 @@
       color: #4f4f4f;
     }
 
+    .skillsContainer {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+    }
+
     .grn-btn {
       margin: 20px 0;
     }

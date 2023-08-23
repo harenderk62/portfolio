@@ -13,3 +13,18 @@
     justify-content: center;
   }
 }
+
+@media screen and (max-width: 768px) {
+  .portfolio-page {
+    padding: 1rem;
+
+    .header {
+      margin: 0;
+      font-size: 2rem;
+    }
+
+    .header-Para {
+      font-size: 0.9rem;
+    }
+  }
+}

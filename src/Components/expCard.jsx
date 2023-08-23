@@ -14,7 +14,9 @@ const ExpCard = (props) => {
         <p className="skillsContainer">
           <span style={{ fontWeight: "bold" }}>Skills: </span>
           {props.skills.map((value, index) => (
-            <span className="skill-G">{value} </span>
+            <span className="skill-G" key={index}>
+              {value}{" "}
+            </span>
           ))}
         </p>
       </div>

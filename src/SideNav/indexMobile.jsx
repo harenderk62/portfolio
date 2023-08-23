@@ -44,9 +44,14 @@ const DownNav = () => {
     []
   );
 
-  const [activeTab, setActiveTab] = useState("About Me");
+  var activeTabFromSession = sessionStorage.getItem("activeTab");
+
+  const [activeTab, setActiveTab] = useState(
+    activeTabFromSession ? activeTabFromSession : "About Me"
+  );
 
   const activeTabHandler = (tab) => {
+    sessionStorage.setItem("activeTab", tab);
     setActiveTab(tab);
 
     let menuItem = menuItems.find((obj) => obj.name === tab);
@@ -59,12 +64,17 @@ const DownNav = () => {
       <ul className="navOptions">
         {menuItems.map((item, index) => (
           <li
-            className={`${activeTab === item.name && "active"}`}
+            className={activeTab === item.name ? "active" : ""}
             key={index}
             onClick={() => activeTabHandler(item.name)}
           >
             <img className="MobileIcon" src={item.icon} alt="Icon" />
-            <p>{item.name}</p>
+            <p
+              className="navTitle"
+              style={{ color: activeTab === item.name ? "#73f4b8" : "" }}
+            >
+              {item.name}
+            </p>
           </li>
         ))}
       </ul>

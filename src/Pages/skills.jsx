@@ -2,6 +2,7 @@ import { useMemo } from "react";
 import Button from "../Components/button";
 import ProgressBar from "react-customizable-progressbar";
 import Send from "../assets/send.svg";
+import Footer from "../Components/footer";
 import ResumeLogo from "../assets/ListIcon/resume.svg";
 import "./skills.scss";
 
@@ -32,53 +33,56 @@ const Resume = () => {
   );
   const buttonHandler = () => {};
   return (
-    <div className="skl">
-      <div className="skills-page">
-        <p className="header">Skills</p>
-        <p>
-          I am proficient in a variety of programming languages including
-          Python, JavaScript, and C#. I have experience building full stack web
-          applications using frameworks such as Django and Flask, and am
-          comfortable working with front-end technologies such as HTML, CSS and
-          beck-end such as python. In addition to my experience with web
-          development, I have also completed projects involving data analysis
-          using libraries such as NumPy. I am always looking to expand my
-          skillset and am open to learning new languages and technologies.
-        </p>
-        <Button
-          className="grn-btn"
-          img={Send}
-          type="button"
-          onClick={buttonHandler}
-          btnName="Lets connect"
-        />
-      </div>
+    <>
+      <div className="skl">
+        <div className="skills-page">
+          <p className="header">Skills</p>
+          <p className="header-Para">
+            I am proficient in a variety of programming languages including
+            Python, JavaScript, and C#. I have experience building full stack
+            web applications using frameworks such as Django and Flask, and am
+            comfortable working with front-end technologies such as HTML, CSS
+            and beck-end such as python. In addition to my experience with web
+            development, I have also completed projects involving data analysis
+            using libraries such as NumPy. I am always looking to expand my
+            skillset and am open to learning new languages and technologies.
+          </p>
+          <Button
+            className="grn-btn"
+            img={Send}
+            type="button"
+            onClick={buttonHandler}
+            btnName="Lets connect"
+          />
+        </div>
 
-      <div className="skills-bar">
-        {skillData.map((item, index) => (
-          <>
-            <ProgressBar
-              key={index}
-              progress={item.percentage}
-              radius={80}
-              transition="1.5s ease 0.5s"
-              trackTransition="0s ease"
-              initialAnimation={true}
-              initialAnimationDelay={10}
-              strokeColor={item.color}
-              strokeLinecap="square"
-              pointerRadius={0}
-              className="progressBar"
-            >
-              <div className="indicator-volume">
-                <p>{item.name}</p>
-                <p className="percentage">{item.percentage}%</p>
-              </div>
-            </ProgressBar>
-          </>
-        ))}
+        <div className="skills-bar">
+          {skillData.map((item, index) => (
+            <>
+              <ProgressBar
+                key={index}
+                progress={item.percentage}
+                radius={80}
+                transition="1.5s ease 0.5s"
+                trackTransition="0s ease"
+                initialAnimation={true}
+                initialAnimationDelay={10}
+                strokeColor={item.color}
+                strokeLinecap="square"
+                pointerRadius={0}
+                className="progressBar"
+              >
+                <div className="indicator-volume">
+                  <p>{item.name}</p>
+                  <p className="percentage">{item.percentage}%</p>
+                </div>
+              </ProgressBar>
+            </>
+          ))}
+        </div>
       </div>
-    </div>
+      <Footer />
+    </>
   );
 };
 

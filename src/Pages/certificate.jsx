@@ -1,6 +1,7 @@
 import { useMemo } from "react";
 import Button from "../Components/button";
 import Send from "../assets/send.svg";
+import Footer from "../Components/footer";
 import ResumeLogo from "../assets/ListIcon/resume.svg";
 import "./certificate.scss";
 
@@ -10,7 +11,7 @@ const Certificate = () => {
     <>
       <div className="certificate-page">
         <p className="header">Certificate's</p>
-        <p>
+        <p className="header-Para">
           I'm certified in a number of programming languages, such as Python and
           JavaScript. These credentials attest to my command of each language as
           well as my capacity to create and manage software products utilising
@@ -28,6 +29,7 @@ const Certificate = () => {
           btnName="Lets connect"
         />
       </div>
+      <Footer />
     </>
   );
 };
