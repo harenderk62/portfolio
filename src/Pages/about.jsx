@@ -1,4 +1,5 @@
 import { useMemo } from "react";
+import { useNavigate } from "react-router-dom";
 import Button from "../Components/button";
 import Card from "../Components/card";
 import ExpCard from "../Components/expCard";
@@ -9,16 +10,18 @@ import User from "../assets/myself.png";
 import Arrow from "../assets/arrow.svg";
 import ResumeLogo from "../assets/ListIcon/resume.svg";
 import "./about.scss";
+import { useMediaQuery } from "react-responsive";
+import ProfileBackground from "../assets/profileBackground.jpeg";
 
 // program
-import ReactLogo from "../assets/Program/react.svg";
-import JavaScript from "../assets/Program/JS.svg";
-import Python from "../assets/Program/python.svg";
-import Mongo from "../assets/Program/Mongodb.svg";
-import SQL from "../assets/Program/sql.svg";
-import Node from "../assets/Program/node.svg";
-import HTML from "../assets/Program/html.svg";
-import Bootstrap from "../assets/Program/bootstrap.svg";
+// import ReactLogo from "../assets/Program/react.svg";
+// import JavaScript from "../assets/Program/JS.svg";
+// import Python from "../assets/Program/python.svg";
+// import Mongo from "../assets/Program/Mongodb.svg";
+// import SQL from "../assets/Program/sql.svg";
+// import Node from "../assets/Program/node.svg";
+// import HTML from "../assets/Program/html.svg";
+// import Bootstrap from "../assets/Program/bootstrap.svg";
 
 import ABC from "../assets/Company/abc.png";
 import Accenture from "../assets/Company/accenture.png";
@@ -27,55 +30,60 @@ import DTU from "../assets/Company/DTU.png";
 import Udemy from "../assets/Company/udemy.png";
 import HackerRank from "../assets/Company/hackerRank.png";
 
+import FAB from "../Components/FAB";
+
 const AboutMe = () => {
-  const programData = useMemo(
-    () => [
-      {
-        logo: ReactLogo,
-        name: "React",
-        about:
-          "JavaScript projects that demonstrate various skills and capabilities in working with the language. They showcase my proficiency in JavaScript and ability to create functional and user-friendly applications.",
-      },
-      {
-        logo: JavaScript,
-        name: "JavaScript",
-        about:
-          "JavaScript projects that demonstrate various skills and capabilities in working with the language. They showcase my proficiency in JavaScript and ability to create functional and user-friendly applications.",
-      },
-      {
-        logo: Python,
-        name: "Python",
-        about:
-          "python projects in the linked showcase a range of skills in utilizing the language for data analysis and machine learning. They include a sentiment analysis tool for social media text and a predictive model for stock prices. ",
-      },
-      {
-        logo: Mongo,
-        name: "MongoDB",
-        about:
-          "With extensive experience in MySQL and PostgreSQL, I am well-versed in the intricacies of relational database management. From designing and implementing complex database structures to optimizing performance and troubleshooting issues, I have the skills and expertise to handle any project.",
-      },
-      {
-        logo: SQL,
-        name: "SQL & PostgreSQL",
-        about:
-          "With extensive experience in MySQL and PostgreSQL, I am well-versed in the intricacies of relational database management. From designing and implementing complex database structures to optimizing performance and troubleshooting issues, I have the skills and expertise to handle any project.",
-      },
-      { logo: Node, name: "NodeJS", about: "Node is Node " },
-      {
-        logo: HTML,
-        name: "HTML & CSS",
-        about:
-          "HTML and CSS projects in the linked showcase proficiency in creating responsive and visually appealing websites. They include a portfolio website and a landing page for a fictional business. ",
-      },
-      {
-        logo: Bootstrap,
-        name: "Bootstrap",
-        about:
-          "Bootstrap projects in the linked showcase proficiency in utilizing the popular front-end framework to create responsive and visually appealing websites. They include a landing page template and a responsive navigation bar.",
-      },
-    ],
-    []
-  );
+  const navigate = useNavigate();
+  const isMobile = useMediaQuery({ maxWidth: 768 });
+
+  // const programData = useMemo(
+  //   () => [
+  //     {
+  //       logo: ReactLogo,
+  //       name: "React",
+  //       about:
+  //         "JavaScript projects that demonstrate various skills and capabilities in working with the language. They showcase my proficiency in JavaScript and ability to create functional and user-friendly applications.",
+  //     },
+  //     {
+  //       logo: JavaScript,
+  //       name: "JavaScript",
+  //       about:
+  //         "JavaScript projects that demonstrate various skills and capabilities in working with the language. They showcase my proficiency in JavaScript and ability to create functional and user-friendly applications.",
+  //     },
+  //     {
+  //       logo: Python,
+  //       name: "Python",
+  //       about:
+  //         "python projects in the linked showcase a range of skills in utilizing the language for data analysis and machine learning. They include a sentiment analysis tool for social media text and a predictive model for stock prices. ",
+  //     },
+  //     {
+  //       logo: Mongo,
+  //       name: "MongoDB",
+  //       about:
+  //         "With extensive experience in MySQL and PostgreSQL, I am well-versed in the intricacies of relational database management. From designing and implementing complex database structures to optimizing performance and troubleshooting issues, I have the skills and expertise to handle any project.",
+  //     },
+  //     {
+  //       logo: SQL,
+  //       name: "SQL & PostgreSQL",
+  //       about:
+  //         "With extensive experience in MySQL and PostgreSQL, I am well-versed in the intricacies of relational database management. From designing and implementing complex database structures to optimizing performance and troubleshooting issues, I have the skills and expertise to handle any project.",
+  //     },
+  //     { logo: Node, name: "NodeJS", about: "Node is Node " },
+  //     {
+  //       logo: HTML,
+  //       name: "HTML & CSS",
+  //       about:
+  //         "HTML and CSS projects in the linked showcase proficiency in creating responsive and visually appealing websites. They include a portfolio website and a landing page for a fictional business. ",
+  //     },
+  //     {
+  //       logo: Bootstrap,
+  //       name: "Bootstrap",
+  //       about:
+  //         "Bootstrap projects in the linked showcase proficiency in utilizing the popular front-end framework to create responsive and visually appealing websites. They include a landing page template and a responsive navigation bar.",
+  //     },
+  //   ],
+  //   []
+  // );
 
   const skills = {
     Language: ["Python", "C++", "C", "Java"],
@@ -103,20 +111,20 @@ const AboutMe = () => {
     ],
   };
 
-  const skillData = useMemo(
-    () => [
-      { name: "React", percentage: "97", color: "#fcba03" },
-      { name: "Python", percentage: "97", color: "#f54689" },
-      { name: "MongoDB", percentage: "97", color: "#8732ab" },
-      { name: "JavaScript", percentage: "97", color: "#c50d5f" },
-      { name: "MySQL", percentage: "97", color: "#9c8371" },
-      { name: "NodeJs", percentage: "97", color: "#c2332f" },
-      { name: "HTML", percentage: "97", color: "#196193" },
-      { name: "CSS", percentage: "97", color: "#34b986" },
-      { name: "Bootstrap", percentage: "97", color: "#ca01bb" },
-    ],
-    []
-  );
+  // const skillData = useMemo(
+  //   () => [
+  //     { name: "React", percentage: "97", color: "#fcba03" },
+  //     { name: "Python", percentage: "97", color: "#f54689" },
+  //     { name: "MongoDB", percentage: "97", color: "#8732ab" },
+  //     { name: "JavaScript", percentage: "97", color: "#c50d5f" },
+  //     { name: "MySQL", percentage: "97", color: "#9c8371" },
+  //     { name: "NodeJs", percentage: "97", color: "#c2332f" },
+  //     { name: "HTML", percentage: "97", color: "#196193" },
+  //     { name: "CSS", percentage: "97", color: "#34b986" },
+  //     { name: "Bootstrap", percentage: "97", color: "#ca01bb" },
+  //   ],
+  //   []
+  // );
 
   const experienceData = [
     {
@@ -211,7 +219,8 @@ const AboutMe = () => {
   };
 
   const resumeHandler = () => {
-    console.log("Resume Handler");
+    sessionStorage.setItem("activeTab", "Resume");
+    navigate("/resume");
   };
 
   const certificationHandler = () => {
@@ -225,6 +234,18 @@ const AboutMe = () => {
   return (
     <div className="Container">
       <div className="page-container">
+        {isMobile && (
+          <div className="profilePics">
+            <img
+              className="profileBackground"
+              src={ProfileBackground}
+              alt="Profile-Background"
+            />
+            <div className="profileLogo">
+              <img className="profile" src={User} alt="Profile" />
+            </div>
+          </div>
+        )}
         <div className="header">
           <div className="aboutMe">
             <h1>Harender Kumar</h1>
@@ -244,19 +265,19 @@ const AboutMe = () => {
                 className="grn-btn"
                 img={Arrow}
                 type="button"
-                onClick={portfolioHandler}
-                btnName="View Portfolio"
+                onClick={resumeHandler}
+                btnName="View Resume"
               />
-              <Button
+              {/* <Button
                 className="drk-btn"
                 img={ResumeLogo}
                 type="button"
                 onClick={resumeHandler}
                 btnName="View Resume"
-              />
+              /> */}
             </div>
           </div>
-          <img className="profile" src={User} alt="Profile" />
+          {!isMobile && <img className="profile" src={User} alt="Profile" />}
         </div>
       </div>
 
@@ -319,7 +340,7 @@ const AboutMe = () => {
           I have completed my B.Tech from 
         </p> */}
 
-        <div className="skills">
+        <div className="skills" style={{ margin: "30px 0" }}>
           {CertificationData.map((item, index) => (
             <CertiCard
               key={index}
@@ -348,7 +369,7 @@ const AboutMe = () => {
           I have completed my B.Tech from 
         </p> */}
 
-        <div className="skills">
+        <div className="skills" style={{ margin: "30px 0" }}>
           {projectsData.map((item, index) => (
             <ProjectCard key={index} title={item.title} about={item.about} />
           ))}
@@ -433,6 +454,9 @@ const AboutMe = () => {
           </div>
         </div>
       </div>
+
+      <FAB />
+
       <Footer />
     </div>
   );

@@ -3,6 +3,7 @@ import Button from "../Components/button";
 import Send from "../assets/send.svg";
 import Footer from "../Components/footer";
 import ResumeLogo from "../assets/ListIcon/resume.svg";
+import FAB from "../Components/FAB";
 import "./certificate.scss";
 
 const Certificate = () => {
@@ -29,6 +30,9 @@ const Certificate = () => {
           btnName="Lets connect"
         />
       </div>
+
+      <FAB />
+
       <Footer />
     </>
   );

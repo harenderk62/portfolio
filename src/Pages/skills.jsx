@@ -16,6 +16,8 @@ import Node from "../assets/Program/node.svg";
 import HTML from "../assets/Program/html.svg";
 import Bootstrap from "../assets/Program/bootstrap.svg";
 
+import FAB from "../Components/FAB";
+
 const Resume = () => {
   const skillData = useMemo(
     () => [
@@ -31,6 +33,7 @@ const Resume = () => {
     ],
     []
   );
+
   const buttonHandler = () => {};
   return (
     <>
@@ -81,6 +84,9 @@ const Resume = () => {
           ))}
         </div>
       </div>
+
+      <FAB />
+
       <Footer />
     </>
   );

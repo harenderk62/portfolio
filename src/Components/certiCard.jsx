@@ -13,13 +13,17 @@ const CertiCard = (props) => {
         <p className="position">{props.title}</p>
         <p className="company">{props.Source}</p>
         <p className="timePeriod">{props.issued}</p>
-        <Button
+        {/* <Button
           className="grn-btn"
           img={Arrow}
           type="button"
           onClick={redirectHandler}
           btnName="Show credential"
-        />
+        /> */}
+        <button className="redirectBtn" type="button" onClick={redirectHandler}>
+          {/* <img src={Arrow} alt="logo" /> */}
+          Show Credential <i class="fa fa-external-link"></i>
+        </button>
       </div>
     </div>
   );

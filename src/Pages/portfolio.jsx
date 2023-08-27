@@ -4,17 +4,18 @@ import Card from "../Components/card";
 import Send from "../assets/send.svg";
 import Footer from "../Components/footer";
 import ResumeLogo from "../assets/ListIcon/resume.svg";
+import FAB from "../Components/FAB";
 import "./portfolio.scss";
 
 // program
-import ReactLogo from "../assets/Program/react.svg";
-import JavaScript from "../assets/Program/JS.svg";
-import Python from "../assets/Program/python.svg";
-import Mongo from "../assets/Program/Mongodb.svg";
-import SQL from "../assets/Program/sql.svg";
-import Node from "../assets/Program/node.svg";
-import HTML from "../assets/Program/html.svg";
-import Bootstrap from "../assets/Program/bootstrap.svg";
+// import ReactLogo from "../assets/Program/react.svg";
+// import JavaScript from "../assets/Program/JS.svg";
+// import Python from "../assets/Program/python.svg";
+// import Mongo from "../assets/Program/Mongodb.svg";
+// import SQL from "../assets/Program/sql.svg";
+// import Node from "../assets/Program/node.svg";
+// import HTML from "../assets/Program/html.svg";
+// import Bootstrap from "../assets/Program/bootstrap.svg";
 
 const Portfolio = () => {
   const buttonHandler = () => {};
@@ -37,7 +38,9 @@ const Portfolio = () => {
           btnName="Lets connect"
         />
       </div>
+
       <Footer />
+      <FAB />
     </>
   );
 };

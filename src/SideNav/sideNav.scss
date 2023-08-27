@@ -67,20 +67,24 @@
       gap: 1rem;
 
       li {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        padding: 0.5rem 0 0.5rem 1rem;
-        cursor: pointer;
         width: 100%;
 
-        img {
-          width: 2rem;
-        }
-        &:hover {
-          background-color: #5aeea9;
-          color: #1a4431;
-          border-radius: 1.5rem;
+        .navLink {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          padding: 0.5rem 0.5rem 0.5rem 0;
+          cursor: pointer;
+          color: #fff;
+
+          img {
+            width: 2rem;
+          }
+          &:hover {
+            background-color: #5aeea9;
+            color: #1a4431;
+            border-radius: 1.5rem;
+          }
         }
       }
     }
@@ -89,6 +93,6 @@
 
 .active {
   background-color: #73f4b8;
-  color: #1a4431;
+  color: #1a4431 !important;
   border-radius: 1.5rem;
 }

@@ -31,16 +31,16 @@ const Connect = () => {
       <div className="contact-form">
         <p className="head">Get In Touch</p>
         <div className="contact-input">
-          <label for="inp" class="inp">
+          <label htmlFor="inp" className="inp">
             <input type="text" id="inp" placeholder="&nbsp;" />
-            <span class="label">Name</span>
-            <span class="focus-bg"></span>
+            <span className="label">Name</span>
+            <span className="focus-bg"></span>
           </label>
 
-          <label for="inp" class="inp">
+          <label htmlFor="inp" className="inp">
             <input type="email" id="inp" placeholder="&nbsp;" />
-            <span class="label">Email</span>
-            <span class="focus-bg"></span>
+            <span className="label">Email</span>
+            <span className="focus-bg"></span>
           </label>
         </div>
         <div className="message-section">
@@ -50,10 +50,10 @@ const Connect = () => {
             cols="40"
             placeholder="Enter your message"
           /> */}
-          <label for="inp" class="customInput">
+          <label htmlFor="inp" className="customInput">
             <textarea rows="10" cols="40" id="inp" placeholder="&nbsp;" />
-            <span class="label">Enter your message</span>
-            <span class="focus-bg"></span>
+            <span className="label">Enter your message</span>
+            <span className="focus-bg"></span>
           </label>
           <Button
             className="grn-btn"

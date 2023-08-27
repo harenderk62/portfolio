@@ -196,6 +196,12 @@ const Resume = () => {
           </div>
         </div>
       </div>
+
+      <div href="" className="float-btn">
+        <i className="fas fa-file-download"></i>
+        <span className="float-txt">Download Resume</span>
+      </div>
+
       <Footer />
     </>
   );
