@@ -40,8 +40,12 @@
     justify-content: center;
     align-items: center;
     gap: 10px;
-    img {
+
+    i {
+      text-align: center;
+      font-size: 20px;
       width: 20px;
+      color: #54b689;
       background-color: #f8f8ff;
       padding: 0.5rem;
       border: none;
@@ -76,6 +80,7 @@
           padding: 0.5rem 0.5rem 0.5rem 0;
           cursor: pointer;
           color: #fff;
+          text-decoration: none;
 
           img {
             width: 2rem;

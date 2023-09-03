@@ -4,7 +4,7 @@ import Card from "../Components/card";
 import Send from "../assets/send.svg";
 import Footer from "../Components/footer";
 import ResumeLogo from "../assets/ListIcon/resume.svg";
-import FAB from "../Components/FAB";
+// import FAB from "../Components/FAB";
 import "./portfolio.scss";
 
 // program
@@ -40,7 +40,7 @@ const Portfolio = () => {
       </div>
 
       <Footer />
-      <FAB />
+      {/* <FAB /> */}
     </>
   );
 };

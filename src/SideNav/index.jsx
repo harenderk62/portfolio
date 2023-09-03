@@ -2,7 +2,7 @@ import { useState, useMemo } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 
 // Redirect Images
-import User from "../assets/myself.png";
+import User from "../assets/myself.webp";
 import LinkedIn from "../assets/linkedIn.svg";
 import Github from "../assets/github.svg";
 import Youtube from "../assets/youtube.svg";
@@ -13,7 +13,7 @@ import Medium from "../assets/medium.svg";
 import "./sideNav.scss";
 
 const SideNav = () => {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   const menuItems = useMemo(
     () => [
@@ -31,13 +31,27 @@ const SideNav = () => {
     []
   );
 
-  const imageData = useMemo(
+  // const imageData = useMemo(
+  //   () => [
+  //     { title: "LinkedIn", src: LinkedIn },
+  //     { title: "Github", src: Github },
+  //     { title: "YouTube", src: Youtube },
+  //     { title: "WhatsApp", src: Whatsapp },
+  //     { title: "Medium", src: Medium },
+  //   ],
+  //   []
+  // );
+  const socialMedia = useMemo(
     () => [
-      { title: "LinkedIn", src: LinkedIn },
-      { title: "Github", src: Github },
-      { title: "YouTube", src: Youtube },
-      { title: "WhatsApp", src: Whatsapp },
-      { title: "Medium", src: Medium },
+      {
+        title: "LinkedIn",
+        icon: "fa fa-linkedin",
+        link: "https://www.linkedin.com/in/harenderkumardtu/",
+      },
+      { title: "Github", icon: "fa fa-github", link: "/" },
+      { title: "YouTube", icon: "fa fa-youtube-play", link: "/" },
+      { title: "WhatsApp", icon: "fa fa-whatsapp", link: "/" },
+      { title: "Medium", icon: "fa fa-medium", link: "/" },
     ],
     []
   );
@@ -51,17 +65,13 @@ const SideNav = () => {
   const activeTabHandler = (tab) => {
     sessionStorage.setItem("activeTab", tab);
     setActiveTab(tab);
-
-    // let menuItem = menuItems.find((obj) => obj.name === tab);
-
-    // navigate(menuItem.route);
   };
 
   return (
     <div className="container">
       <div className="info">
         <p className="info-name">Harender Kumar</p>
-        <img src={User} alt="profile" title="Harender Kumar" />
+        <img src={User} alt="profile" loading="lazy" title="Harender Kumar" />
         <p className="info-about">
           Hi, My name is Harender Kumar and I'm a Software Engineer. Welcome to
           my personal Website
@@ -71,8 +81,19 @@ const SideNav = () => {
       <hr />
 
       <div className="iconContainer">
-        {imageData.map((item, index) => (
-          <img src={item.src} alt="logo" title={item.title} key={index} />
+        {/* {imageData.map((item, index) => (
+          <img
+            src={item.src}
+            alt="logo"
+            loading="lazy"
+            title={item.title}
+            key={index}
+          />
+        ))} */}
+        {socialMedia.map((item, index) => (
+          <NavLink to={item.link} key={index}>
+            <i className={item.icon} title={item.title}></i>
+          </NavLink>
         ))}
       </div>
 

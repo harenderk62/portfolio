@@ -1,7 +1,7 @@
 const ExpCard = (props) => {
   return (
     <div className="expCard">
-      <img className="logo" src={props.img} alt="cmpLogo" />
+      <img className="logo" loading="lazy" src={props.img} alt="cmpLogo" />
       <div className="exp-info">
         <p className="position">{props.position}</p>
         <p className="company">

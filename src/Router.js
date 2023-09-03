@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import AboutMe from "./Pages/about";
 import Portfolio from "./Pages/portfolio";
 import Skills from "./Pages/skills";
@@ -8,6 +8,13 @@ import Connect from "./Pages/connect";
 import SideNav from "./SideNav/index";
 import MobileNav from "./SideNav/indexMobile";
 import { useMediaQuery } from "react-responsive";
+import FAB from "./Components/FAB";
+
+const FabConditionalRenderer = () => {
+  const location = useLocation();
+
+  return ["/resume", "/contact"].includes(location.pathname) ? null : <FAB />;
+};
 
 const App = () => {
   const isMobile = useMediaQuery({ maxWidth: 768 });
@@ -23,6 +30,7 @@ const App = () => {
         <Route path="/certificates" Component={Certificate} />
         <Route path="/contact" Component={Connect} />
       </Routes>
+      <FabConditionalRenderer />
     </BrowserRouter>
   );
 };

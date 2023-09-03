@@ -4,6 +4,7 @@ import SpeedDialAction from "@mui/material/SpeedDialAction";
 import ArticleOutlinedIcon from "@mui/icons-material/ArticleOutlined";
 import GetAppOutlinedIcon from "@mui/icons-material/GetAppOutlined";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import { useMediaQuery } from "react-responsive";
 
 const actions = [
   { icon: <ArticleOutlinedIcon />, name: "View Resume" },
@@ -13,11 +14,16 @@ const actions = [
 ];
 
 const FAB = () => {
+  const isMobile = useMediaQuery({ maxWidth: 768 });
   //
   return (
     <SpeedDial
       ariaLabel="SpeedDial basic example"
-      sx={{ position: "fixed", bottom: 36, right: 36 }}
+      sx={{
+        position: "fixed",
+        bottom: isMobile ? 75 : 36,
+        right: isMobile ? 10 : 36,
+      }}
       icon={<SpeedDialIcon />}
     >
       {actions.map((action) => (

@@ -1,14 +1,14 @@
 import { useMemo } from "react";
 import { useNavigate } from "react-router-dom";
 import Button from "../Components/button";
-import Card from "../Components/card";
+// import Card from "../Components/card";
 import ExpCard from "../Components/expCard";
 import CertiCard from "../Components/certiCard";
 import ProjectCard from "../Components/projectCard";
 import Footer from "../Components/footer";
-import User from "../assets/myself.png";
+import User from "../assets/myself.webp";
 import Arrow from "../assets/arrow.svg";
-import ResumeLogo from "../assets/ListIcon/resume.svg";
+// import ResumeLogo from "../assets/ListIcon/resume.svg";
 import "./about.scss";
 import { useMediaQuery } from "react-responsive";
 import ProfileBackground from "../assets/profileBackground.jpeg";
@@ -30,7 +30,7 @@ import DTU from "../assets/Company/DTU.png";
 import Udemy from "../assets/Company/udemy.png";
 import HackerRank from "../assets/Company/hackerRank.png";
 
-import FAB from "../Components/FAB";
+// import FAB from "../Components/FAB";
 
 const AboutMe = () => {
   const navigate = useNavigate();
@@ -239,10 +239,16 @@ const AboutMe = () => {
             <img
               className="profileBackground"
               src={ProfileBackground}
+              loading="lazy"
               alt="Profile-Background"
             />
             <div className="profileLogo">
-              <img className="profile" src={User} alt="Profile" />
+              <img
+                className="profile"
+                loading="lazy"
+                src={User}
+                alt="Profile"
+              />
             </div>
           </div>
         )}
@@ -264,6 +270,7 @@ const AboutMe = () => {
               <Button
                 className="grn-btn"
                 img={Arrow}
+                loading="lazy"
                 type="button"
                 onClick={resumeHandler}
                 btnName="View Resume"
@@ -277,7 +284,9 @@ const AboutMe = () => {
               /> */}
             </div>
           </div>
-          {!isMobile && <img className="profile" src={User} alt="Profile" />}
+          {!isMobile && (
+            <img className="profile" loading="lazy" src={User} alt="Profile" />
+          )}
         </div>
       </div>
 
@@ -357,7 +366,8 @@ const AboutMe = () => {
           type="button"
           onClick={certificationHandler}
         >
-          Show all licenses & certifications
+          Show all licenses & certifications{" "}
+          <i class="fa-solid fa-right-long"></i>
         </button>
       </div>
 
@@ -379,7 +389,7 @@ const AboutMe = () => {
           type="button"
           onClick={projectHandler}
         >
-          Show all projects
+          Show all projects <i class="fa-solid fa-right-long"></i>
         </button>
       </div>
 
@@ -455,7 +465,7 @@ const AboutMe = () => {
         </div>
       </div>
 
-      <FAB />
+      {/* <FAB /> */}
 
       <Footer />
     </div>

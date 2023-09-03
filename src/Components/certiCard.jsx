@@ -8,7 +8,7 @@ const CertiCard = (props) => {
 
   return (
     <div className="expCard">
-      <img className="logo" src={props.img} alt="cmpLogo" />
+      <img className="logo" loading="lazy" src={props.img} alt="cmpLogo" />
       <div className="exp-info">
         <p className="position">{props.title}</p>
         <p className="company">{props.Source}</p>

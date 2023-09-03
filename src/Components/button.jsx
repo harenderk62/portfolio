@@ -8,7 +8,7 @@ const Button = (props) => {
         type={props.type}
         onClick={props.onClick}
       >
-        <img src={props.img} alt="logo" /> {props.btnName}
+        <img src={props.img} loading="lazy" alt="logo" /> {props.btnName}
       </button>
     </div>
   );
