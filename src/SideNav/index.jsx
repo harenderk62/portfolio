@@ -48,10 +48,22 @@ const SideNav = () => {
         icon: "fa fa-linkedin",
         link: "https://www.linkedin.com/in/harenderkumardtu/",
       },
-      { title: "Github", icon: "fa fa-github", link: "/" },
+      {
+        title: "Github",
+        icon: "fa fa-github",
+        link: "https://github.com/harenderk62",
+      },
       { title: "YouTube", icon: "fa fa-youtube-play", link: "/" },
-      { title: "WhatsApp", icon: "fa fa-whatsapp", link: "/" },
-      { title: "Medium", icon: "fa fa-medium", link: "/" },
+      {
+        title: "WhatsApp",
+        icon: "fa fa-whatsapp",
+        link: "https://wa.me/917048941490",
+      },
+      {
+        title: "Hacker Rank",
+        icon: "fa-brands fa-hackerrank",
+        link: "https://www.hackerrank.com/harenderk62?hr_r=1",
+      },
     ],
     []
   );
