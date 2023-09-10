@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import SpeedDial from "@mui/material/SpeedDial";
 import SpeedDialIcon from "@mui/material/SpeedDialIcon";
 import SpeedDialAction from "@mui/material/SpeedDialAction";
@@ -9,13 +10,27 @@ import { useMediaQuery } from "react-responsive";
 const actions = [
   { icon: <ArticleOutlinedIcon />, name: "View Resume" },
   { icon: <GetAppOutlinedIcon />, name: "Download Resume" },
-  // { icon: <PrintIcon />, name: "Print" },
   { icon: <LinkedInIcon />, name: "Connect" },
 ];
 
 const FAB = () => {
+  const navigate = useNavigate();
   const isMobile = useMediaQuery({ maxWidth: 768 });
   //
+
+  const fabClick = (e) => {
+    const action = e.currentTarget.ariaLabel;
+
+    if (action === "View Resume") {
+      sessionStorage.setItem("activeTab", "Resume");
+      navigate("/resume");
+    } else if (action === "Download Resume") {
+      console.log("first", e.currentTarget.ariaLabel);
+    } else if (action === "Connect") {
+      window.location.href = "https://www.linkedin.com/in/harenderkumardtu/";
+    }
+  };
+
   return (
     <SpeedDial
       ariaLabel="SpeedDial"
@@ -31,6 +46,7 @@ const FAB = () => {
           key={action.name}
           icon={action.icon}
           tooltipTitle={action.name}
+          onClick={(e) => fabClick(e)}
         />
       ))}
     </SpeedDial>
