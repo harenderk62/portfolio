@@ -4,12 +4,14 @@ import Send from "../assets/send.svg";
 import User from "../assets/user.png";
 import Footer from "../Components/footer";
 import ResumeLogo from "../assets/ListIcon/resume.svg";
+import Toolbar from "@mui/material/Toolbar";
 import "./resume.scss";
 
 const Resume = () => {
   const buttonHandler = () => {};
   return (
     <>
+      <Toolbar id="back-to-top-anchor" />
       <div className="resume-page">
         <p className="header">Resume</p>
       </div>

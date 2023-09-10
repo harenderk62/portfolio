@@ -18,11 +18,11 @@ const FAB = () => {
   //
   return (
     <SpeedDial
-      ariaLabel="SpeedDial basic example"
+      ariaLabel="SpeedDial"
       sx={{
         position: "fixed",
         bottom: isMobile ? 75 : 36,
-        right: isMobile ? 10 : 36,
+        right: isMobile ? 10 : 16,
       }}
       icon={<SpeedDialIcon />}
     >

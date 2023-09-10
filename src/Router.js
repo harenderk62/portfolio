@@ -9,6 +9,7 @@ import SideNav from "./SideNav/index";
 import MobileNav from "./SideNav/indexMobile";
 import { useMediaQuery } from "react-responsive";
 import FAB from "./Components/FAB";
+import ScrollTop from "./Components/scrollTop";
 
 const FabConditionalRenderer = () => {
   const location = useLocation();
@@ -16,7 +17,7 @@ const FabConditionalRenderer = () => {
   return ["/resume", "/contact"].includes(location.pathname) ? null : <FAB />;
 };
 
-const App = () => {
+const App = (props) => {
   const isMobile = useMediaQuery({ maxWidth: 768 });
 
   return (
@@ -31,6 +32,7 @@ const App = () => {
         <Route path="/contact" Component={Connect} />
       </Routes>
       <FabConditionalRenderer />
+      <ScrollTop {...props} />
     </BrowserRouter>
   );
 };

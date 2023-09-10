@@ -4,12 +4,14 @@ import Send from "../assets/send.svg";
 import Footer from "../Components/footer";
 // import ResumeLogo from "../assets/ListIcon/resume.svg";
 // import FAB from "../Components/FAB";
+import Toolbar from "@mui/material/Toolbar";
 import "./certificate.scss";
 
 const Certificate = () => {
   const buttonHandler = () => {};
   return (
     <>
+      <Toolbar id="back-to-top-anchor" />
       <div className="certificate-page">
         <p className="header">Certificate's</p>
         <p className="header-Para">

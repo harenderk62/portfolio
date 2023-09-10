@@ -1,13 +1,9 @@
 import { useState, useMemo } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
+import Social from "../Components/social";
 
 // Redirect Images
 import User from "../assets/myself.webp";
-import LinkedIn from "../assets/linkedIn.svg";
-import Github from "../assets/github.svg";
-import Youtube from "../assets/youtube.svg";
-import Whatsapp from "../assets/whatsapp.svg";
-import Medium from "../assets/medium.svg";
 
 // List Images
 import "./sideNav.scss";
@@ -27,43 +23,6 @@ const SideNav = () => {
         route: "/certificates",
       },
       { name: "Contact", icon: "contact_mail", route: "/contact" },
-    ],
-    []
-  );
-
-  // const imageData = useMemo(
-  //   () => [
-  //     { title: "LinkedIn", src: LinkedIn },
-  //     { title: "Github", src: Github },
-  //     { title: "YouTube", src: Youtube },
-  //     { title: "WhatsApp", src: Whatsapp },
-  //     { title: "Medium", src: Medium },
-  //   ],
-  //   []
-  // );
-  const socialMedia = useMemo(
-    () => [
-      {
-        title: "LinkedIn",
-        icon: "fa fa-linkedin",
-        link: "https://www.linkedin.com/in/harenderkumardtu/",
-      },
-      {
-        title: "Github",
-        icon: "fa fa-github",
-        link: "https://github.com/harenderk62",
-      },
-      { title: "YouTube", icon: "fa fa-youtube-play", link: "/" },
-      {
-        title: "WhatsApp",
-        icon: "fa fa-whatsapp",
-        link: "https://wa.me/917048941490",
-      },
-      {
-        title: "Hacker Rank",
-        icon: "fa-brands fa-hackerrank",
-        link: "https://www.hackerrank.com/harenderk62?hr_r=1",
-      },
     ],
     []
   );
@@ -91,34 +50,13 @@ const SideNav = () => {
       </div>
 
       <hr />
-
-      <div className="iconContainer">
-        {/* {imageData.map((item, index) => (
-          <img
-            src={item.src}
-            alt="logo"
-            loading="lazy"
-            title={item.title}
-            key={index}
-          />
-        ))} */}
-        {socialMedia.map((item, index) => (
-          <NavLink to={item.link} key={index}>
-            <i className={item.icon} title={item.title}></i>
-          </NavLink>
-        ))}
-      </div>
-
+      <Social />
       <hr />
 
       <div className="list">
         <ul>
           {menuItems.map((item, index) => (
-            <li
-              // className={`${activeTab === item.name && "active"}`}
-              key={index}
-              onClick={() => activeTabHandler(item.name)}
-            >
+            <li key={index} onClick={() => activeTabHandler(item.name)}>
               <NavLink
                 to={item.route}
                 activeclassname="active"

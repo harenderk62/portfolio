@@ -4,6 +4,7 @@ import Card from "../Components/card";
 import Send from "../assets/send.svg";
 import Footer from "../Components/footer";
 import ResumeLogo from "../assets/ListIcon/resume.svg";
+import Toolbar from "@mui/material/Toolbar";
 // import FAB from "../Components/FAB";
 import "./portfolio.scss";
 
@@ -21,6 +22,7 @@ const Portfolio = () => {
   const buttonHandler = () => {};
   return (
     <>
+      <Toolbar id="back-to-top-anchor" />
       <div className="portfolio-page">
         <p className="header">Portfolio</p>
         <p className="header-Para">

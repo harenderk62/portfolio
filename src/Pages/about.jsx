@@ -1,5 +1,5 @@
 import { useMemo } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, NavLink } from "react-router-dom";
 import Button from "../Components/button";
 // import Card from "../Components/card";
 import ExpCard from "../Components/expCard";
@@ -8,6 +8,10 @@ import ProjectCard from "../Components/projectCard";
 import Footer from "../Components/footer";
 import User from "../assets/myself.webp";
 import Arrow from "../assets/arrow.svg";
+import Social from "../Components/social";
+// Back to top FAB
+import Toolbar from "@mui/material/Toolbar";
+
 // import ResumeLogo from "../assets/ListIcon/resume.svg";
 import "./about.scss";
 import { useMediaQuery } from "react-responsive";
@@ -32,7 +36,7 @@ import HackerRank from "../assets/Company/hackerRank.png";
 
 // import FAB from "../Components/FAB";
 
-const AboutMe = () => {
+const AboutMe = (props) => {
   const navigate = useNavigate();
   const isMobile = useMediaQuery({ maxWidth: 768 });
 
@@ -249,9 +253,11 @@ const AboutMe = () => {
                 src={User}
                 alt="Profile"
               />
+              <Social />
             </div>
           </div>
         )}
+        <Toolbar id="back-to-top-anchor" />
         <div className="header">
           <div className="aboutMe">
             <h1>Harender Kumar</h1>

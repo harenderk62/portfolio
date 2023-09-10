@@ -4,6 +4,7 @@ import ProgressBar from "react-customizable-progressbar";
 import Send from "../assets/send.svg";
 import Footer from "../Components/footer";
 // import ResumeLogo from "../assets/ListIcon/resume.svg";
+import Toolbar from "@mui/material/Toolbar";
 import "./skills.scss";
 
 // program
@@ -37,6 +38,7 @@ const Resume = () => {
   const buttonHandler = () => {};
   return (
     <>
+      <Toolbar id="back-to-top-anchor" />
       <div className="skl">
         <div className="skills-page">
           <p className="header">Skills</p>
