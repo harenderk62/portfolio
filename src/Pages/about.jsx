@@ -202,19 +202,20 @@ const AboutMe = (props) => {
 
   const projectsData = [
     {
-      title: "SQL Masterclass: SQL for Data Analytics",
+      title:
+        "Enhanced User Experience: Revamped ABSLI's Login Page of Customer Servicing Portal",
       about:
-        "I have more than 1 year experience building software for clients allover the world. Below is a quick overview of my main technical skill sets and technologies I use. Want to find out more about my experience & projects? Check out my online resume and project portfolio.",
+        "Completely redesigned the ABSLI's customer servicing portal login page. -> Improved user login experience by offering a variety of login options. -> Added choices for users to log in using their phone number, email address, policy number, and user ID into the customer servicing portal",
     },
     {
-      title: "SQL Masterclass: SQL for Data Analytics",
+      title: "InsureGPT (using OpenAI)",
       about:
-        "I have more than 1 year experience building software for clients allover the world. Below is a quick overview of my main technical skill sets and technologies I use. Want to find out more about my experience & projects? Check out my online resume and project portfolio.",
+        "Created InsureGPT with OpenAI, enabling customers to interact and inquire about ABSLI's range of policies through chat. -> Boosted user engagement and contentment on ABSLI's life insurance webpage. -> Utilized AWS EC2 to deploy InsureGPT for seamless functionality.",
     },
     {
-      title: "SQL Masterclass: SQL for Data Analytics",
+      title: "ESB API Reporting: Automation Across 70+ Distinct APIs",
       about:
-        "I have more than 1 year experience building software for clients allover the world. Below is a quick overview of my main technical skill sets and technologies I use. Want to find out more about my experience & projects? Check out my online resume and project portfolio.",
+        "-> Implemented automation for the reporting system of over 70 distinct ESB APIs used by the customer portal.  -> Generated hourly email notifications containing success and failure reports of the APIs, leading to enhanced monitoring and operational efficiency.",
     },
   ];
 
@@ -402,14 +403,11 @@ const AboutMe = (props) => {
       <div className="subContainer">
         <h3>Skills</h3>
         <p>
-          I am proficient in a variety of programming languages including
-          Python, JavaScript, and C#. I have experience building full stack web
-          applications using frameworks such as Django and Flask, and am
-          comfortable working with front-end technologies such as HTML, CSS and
-          beck-end such as python. In addition to my experience with web
-          development, I have also completed projects involving data analysis
-          using libraries such as NumPy. I am always looking to expand my
-          skillset and am open to learning new languages and technologies.
+          I'm a proficient developer specializing in Python, with a strong track
+          record in building full-stack web applications using ReactJS, NodeJS,
+          MongoDB, and Flask. Proficient in HTML, CSS, and data engineering with
+          NumPy, I'm dedicated to staying current with emerging technologies to
+          ensure optimal results.
         </p>
         <div>
           {Object.keys(skills).map((value, index) => (
@@ -437,9 +435,14 @@ const AboutMe = (props) => {
             (NLP)
           </p>
           <p className="pubAbout">
-            focuses on the application of Natural Language Processing (NLP)
-            techniques for extractive text summarization, providing a
-            streamlined approach to summarize large volumes of textual data.
+            My research paper during my BTech studies primarily focused on the
+            application of Natural Language Processing (NLP) techniques for
+            extractive text summarization. This research aimed to develop a
+            streamlined approach that efficiently summarizes large volumes of
+            textual data. By leveraging NLP, I explored methods to automatically
+            extract and condense relevant information from extensive text
+            sources, ultimately improving the accessibility and usability of
+            such data.
           </p>
         </div>
       </div>
@@ -454,19 +457,24 @@ const AboutMe = (props) => {
               National Standard Examination in Physics (IAPT)
             </p>
             <p className="awardAbout">
-              Rank 3 in my Center and among the Top 10%
+              Achieved rank 3 within my Center and consistently ranked among the
+              Top 10% of participants
             </p>
           </div>
           <div className="award">
             <p className="awardTitle">National Children's Science Congress</p>
             <p className="awardAbout">
-              Represent my school at Regional level and got the certificate of
-              Outstanding presentation{" "}
+              I had the honor of representing my school at the regional level
+              and received recognition for an outstanding presentation at the
+              National Children's Science Congress.
             </p>
           </div>
           <div className="award">
             <p className="awardTitle">Jee Mains</p>
-            <p className="awardAbout">Under Top 3 percentile</p>
+            <p className="awardAbout">
+              Scored in the top 98 percentile in the JEE Mains, where over 13
+              lakhs students appeared.
+            </p>
           </div>
         </div>
       </div>
