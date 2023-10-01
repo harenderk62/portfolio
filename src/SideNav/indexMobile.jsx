@@ -18,28 +18,29 @@ const DownNav = () => {
     () => [
       { name: "About Me", icon: "person_pin", route: "/" },
       { name: "Portfolio", icon: "work", route: "/portfolio" },
-      { name: "Skills", icon: "auto_fix_high", route: "/skills" },
+      // { name: "Skills", icon: "auto_fix_high", route: "/skills" },
+      { name: "Genie", icon: "auto_awesome", route: "/skills" },
       { name: "Resume", icon: "description", route: "/resume" },
       {
         name: "Certificates",
         icon: "workspace_premium",
         route: "/certificates",
       },
-      { name: "Contact", icon: "contact_mail", route: "/contact" },
+      // { name: "Contact", icon: "contact_mail", route: "/contact" },
     ],
     []
   );
 
-  const imageData = useMemo(
-    () => [
-      { title: "LinkedIn", src: LinkedIn },
-      { title: "Github", src: Github },
-      { title: "YouTube", src: Youtube },
-      { title: "WhatsApp", src: Whatsapp },
-      { title: "Medium", src: Medium },
-    ],
-    []
-  );
+  // const imageData = useMemo(
+  //   () => [
+  //     { title: "LinkedIn", src: LinkedIn },
+  //     { title: "Github", src: Github },
+  //     { title: "YouTube", src: Youtube },
+  //     { title: "WhatsApp", src: Whatsapp },
+  //     { title: "Medium", src: Medium },
+  //   ],
+  //   []
+  // );
 
   var activeTabFromSession = sessionStorage.getItem("activeTab");
 
@@ -53,7 +54,12 @@ const DownNav = () => {
 
     let menuItem = menuItems.find((obj) => obj.name === tab);
 
-    navigate(menuItem.route);
+    if (menuItem.name === "Genie") {
+      window.location.href =
+        "http://chat-portfolio.s3-website.ap-south-1.amazonaws.com/";
+    } else {
+      navigate(menuItem.route);
+    }
   };
 
   return (
@@ -61,24 +67,46 @@ const DownNav = () => {
       <ul className="navOptions">
         {menuItems.map((item, index) => (
           <li
-            className={activeTab === item.name ? "active" : ""}
+            className={`${activeTab === item.name ? "active" : ""} ${
+              item.name === "Genie" && "Genie"
+            }`}
             key={index}
             onClick={() => activeTabHandler(item.name)}
           >
-            <p className="mobile-navIcon">
+            <p
+              className={`mobile-navIcon ${
+                item.name === "Genie" && "Genie-navIcon"
+              }`}
+            >
               <span
-                className="material-icons"
+                className={`material-icons ${
+                  item.name === "Genie" && "Genie-icons"
+                }`}
                 style={{
                   width: "10px",
-                  color: activeTab === item.name ? "#73f4b8" : "",
+                  color:
+                    item.name === "Genie"
+                      ? "#3b3b3b"
+                      : activeTab === item.name
+                      ? "#73f4b8"
+                      : "",
                 }}
               >
                 {item.icon}
               </span>
             </p>
             <p
-              className="navTitle"
-              style={{ color: activeTab === item.name ? "#73f4b8" : "" }}
+              className={`navTitle ${
+                item.name === "Genie" && "Genie-navTitle"
+              }`}
+              style={{
+                color:
+                  item.name === "Genie"
+                    ? "#3b3b3b"
+                    : activeTab === item.name
+                    ? "#73f4b8"
+                    : "",
+              }}
             >
               {item.name}
             </p>
