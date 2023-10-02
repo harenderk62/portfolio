@@ -39,7 +39,12 @@ const Social = () => {
   return (
     <div className={isMobile ? "mb-social" : "iconContainer"}>
       {socialMedia.map((item, index) => (
-        <NavLink to={item.link} key={index} className="mb-social-redirect">
+        <NavLink
+          to={item.link}
+          key={index}
+          className="mb-social-redirect"
+          target="_blank"
+        >
           <i className={item.icon} title={item.title}></i>
         </NavLink>
       ))}

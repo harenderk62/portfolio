@@ -22,7 +22,7 @@ const CertiCard = (props) => {
         /> */}
         <button className="redirectBtn" type="button" onClick={redirectHandler}>
           {/* <img src={Arrow} alt="logo" /> */}
-          Show Credential <i class="fa fa-external-link"></i>
+          Show Credential <i className="fa fa-external-link"></i>
         </button>
       </div>
     </div>

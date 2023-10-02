@@ -374,7 +374,7 @@ const AboutMe = (props) => {
           onClick={certificationHandler}
         >
           Show all licenses & certifications{" "}
-          <i class="fa-solid fa-right-long"></i>
+          <i className="fa-solid fa-right-long"></i>
         </button>
       </div>
 
@@ -396,7 +396,7 @@ const AboutMe = (props) => {
           type="button"
           onClick={projectHandler}
         >
-          Show all projects <i class="fa-solid fa-right-long"></i>
+          Show all projects <i className="fa-solid fa-right-long"></i>
         </button>
       </div>
 

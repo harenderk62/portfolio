@@ -15,13 +15,14 @@ const SideNav = () => {
     () => [
       { name: "About Me", icon: "person_pin", route: "/" },
       { name: "Portfolio", icon: "work", route: "/portfolio" },
-      { name: "Skills", icon: "auto_fix_high", route: "/skills" },
+      // { name: "Skills", icon: "auto_fix_high", route: "/skills" },
+      { name: "Genie", icon: "auto_awesome", route: "/" },
       { name: "Resume", icon: "description", route: "/resume" },
-      {
-        name: "Certificates",
-        icon: "workspace_premium",
-        route: "/certificates",
-      },
+      // {
+      //   name: "Certificates",
+      //   icon: "workspace_premium",
+      //   route: "/certificates",
+      // },
       { name: "Contact", icon: "contact_mail", route: "/contact" },
     ],
     []
@@ -57,22 +58,43 @@ const SideNav = () => {
         <ul>
           {menuItems.map((item, index) => (
             <li key={index} onClick={() => activeTabHandler(item.name)}>
-              <NavLink
-                to={item.route}
-                activeclassname="active"
-                className="navLink"
-              >
-                <span
-                  className="material-icons"
-                  style={{
-                    width: "10px",
-                    padding: "0 10px",
-                  }}
+              {item.name !== "Genie" ? (
+                <NavLink
+                  to={item.route}
+                  activeclassname="active"
+                  className="navLink"
                 >
-                  {item.icon}
-                </span>
-                {item.name}
-              </NavLink>
+                  <span
+                    className="material-icons"
+                    style={{
+                      width: "10px",
+                      padding: "0 10px",
+                    }}
+                  >
+                    {item.icon}
+                  </span>
+                  {item.name}
+                </NavLink>
+              ) : (
+                <div
+                  className="navLink"
+                  onClick={() =>
+                    (window.location.href =
+                      "http://chat-portfolio.s3-website.ap-south-1.amazonaws.com/")
+                  }
+                >
+                  <span
+                    className="material-icons"
+                    style={{
+                      width: "10px",
+                      padding: "0 10px",
+                    }}
+                  >
+                    {item.icon}
+                  </span>
+                  {item.name}
+                </div>
+              )}
             </li>
           ))}
         </ul>

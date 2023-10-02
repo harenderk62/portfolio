@@ -51,21 +51,21 @@
 
   .Genie {
     margin-bottom: 20px;
-    background-color: rgb(52, 185, 134);
-    border-top: 4px solid navajowhite;
-    border-radius: 3rem 3rem 0 0;
+    background-color: rgb(168, 168, 168);
+    // border-top: 4px solid navajowhite;
+    border-radius: 5px;
 
     .Genie-navIcon {
       width: 30px !important;
 
       .Genie-icons {
-        font-size: 33px;
+        font-size: 25px;
       }
     }
 
     .Genie-navTitle {
-      position: absolute;
-      bottom: 3px;
+      // position: absolute;
+      // bottom: 3px;
     }
   }
 }
