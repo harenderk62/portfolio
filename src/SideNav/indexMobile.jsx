@@ -17,16 +17,16 @@ const DownNav = () => {
   const menuItems = useMemo(
     () => [
       { name: "About Me", icon: "person_pin", route: "/" },
-      { name: "Portfolio", icon: "work", route: "/portfolio" },
+      // { name: "Portfolio", icon: "work", route: "/portfolio" },
       // { name: "Skills", icon: "auto_fix_high", route: "/skills" },
       { name: "Genie", icon: "auto_awesome", route: "/" },
-      { name: "Resume", icon: "description", route: "/resume" },
+      // { name: "Resume", icon: "description", route: "/resume" },
       // {
       //   name: "Certificates",
       //   icon: "workspace_premium",
       //   route: "/certificates",
       // },
-      { name: "Contact", icon: "contact_mail", route: "/contact" },
+      // { name: "Contact", icon: "contact_mail", route: "/contact" },
     ],
     []
   );
@@ -68,7 +68,7 @@ const DownNav = () => {
         {menuItems.map((item, index) => (
           <li
             className={`${activeTab === item.name ? "active" : ""} ${
-              item.name === "Genie" && "Genie"
+              item.name === "Genie" && false && "Genie"
             }`}
             key={index}
             onClick={() => activeTabHandler(item.name)}
@@ -80,16 +80,13 @@ const DownNav = () => {
             >
               <span
                 className={`material-icons ${
-                  item.name === "Genie" && "Genie-icons"
+                  item.name === "Genie" && false && "Genie-icons"
                 }`}
                 style={{
                   width: "10px",
                   color:
-                    item.name === "Genie"
-                      ? "yellow"
-                      : activeTab === item.name
-                      ? "#73f4b8"
-                      : "",
+                    // item.name === "Genie"
+                    false ? "yellow" : activeTab === item.name ? "#73f4b8" : "",
                 }}
               >
                 {item.icon}
@@ -97,15 +94,12 @@ const DownNav = () => {
             </p>
             <p
               className={`navTitle ${
-                item.name === "Genie" && "Genie-navTitle"
+                item.name === "Genie" && false && "Genie-navTitle"
               }`}
               style={{
                 color:
-                  item.name === "Genie"
-                    ? "yellow"
-                    : activeTab === item.name
-                    ? "#73f4b8"
-                    : "",
+                  // item.name === "Genie"
+                  false ? "yellow" : activeTab === item.name ? "#73f4b8" : "",
               }}
             >
               {item.name}

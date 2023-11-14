@@ -14,16 +14,16 @@ const SideNav = () => {
   const menuItems = useMemo(
     () => [
       { name: "About Me", icon: "person_pin", route: "/" },
-      { name: "Portfolio", icon: "work", route: "/portfolio" },
+      // { name: "Portfolio", icon: "work", route: "/portfolio" },
       // { name: "Skills", icon: "auto_fix_high", route: "/skills" },
       { name: "Genie", icon: "auto_awesome", route: "/" },
-      { name: "Resume", icon: "description", route: "/resume" },
+      // { name: "Resume", icon: "description", route: "/resume" },
       // {
       //   name: "Certificates",
       //   icon: "workspace_premium",
       //   route: "/certificates",
       // },
-      { name: "Contact", icon: "contact_mail", route: "/contact" },
+      // { name: "Contact", icon: "contact_mail", route: "/contact" },
     ],
     []
   );

@@ -134,7 +134,7 @@ const AboutMe = (props) => {
     {
       img: ABC,
       company: "Aditya Birla Capital",
-      position: "Software Engineer Trainee",
+      position: "Software Engineer",
       type: "Full-time",
       from: "Jun 2022",
       to: "Present",

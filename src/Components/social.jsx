@@ -17,21 +17,21 @@ const Social = () => {
         icon: "fa fa-github",
         link: "https://github.com/harenderk62",
       },
-      {
-        title: "YouTube",
-        icon: "fa fa-youtube-play",
-        link: "https://www.youtube.com",
-      },
-      {
-        title: "WhatsApp",
-        icon: "fa fa-whatsapp",
-        link: "https://wa.me/917048941490",
-      },
-      {
-        title: "Hacker Rank",
-        icon: "fa fa-brands fa-hackerrank",
-        link: "https://www.hackerrank.com/harenderk62?hr_r=1",
-      },
+      // {
+      //   title: "YouTube",
+      //   icon: "fa fa-youtube-play",
+      //   link: "https://www.youtube.com/@dev-Insider",
+      // },
+      // {
+      //   title: "WhatsApp",
+      //   icon: "fa fa-whatsapp",
+      //   link: "https://wa.me/917048941490",
+      // },
+      // {
+      //   title: "Hacker Rank",
+      //   icon: "fa fa-brands fa-hackerrank",
+      //   link: "https://www.hackerrank.com/harenderk62?hr_r=1",
+      // },
     ],
     []
   );
