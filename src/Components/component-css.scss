@@ -182,7 +182,7 @@
 }
 
 .iconContainer {
-  margin: 1rem 0;
+  // margin: 1rem 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -198,5 +198,6 @@
     border: none;
     border-radius: 50%;
     cursor: pointer;
+    width: 100%;
   }
 }

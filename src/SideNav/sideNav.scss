@@ -1,6 +1,6 @@
-.container {
+.sideNavContainer {
   position: fixed;
-  max-width: 15rem;
+  max-width: 17rem;
   height: 100%;
   color: #fff;
   background: #54b689;
@@ -31,6 +31,8 @@
     }
     .info-about {
       font-size: 0.9rem;
+      margin: 1rem 0 0 0;
+      padding: 0 0.5rem;
     }
   }
 
@@ -56,7 +58,7 @@
         .navLink {
           display: flex;
           align-items: center;
-          gap: 10px;
+          gap: 20px;
           padding: 0.5rem 0.5rem 0.5rem 0;
           cursor: pointer;
           color: #fff;

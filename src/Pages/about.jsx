@@ -1,5 +1,6 @@
-import { useMemo } from "react";
+import { useState, useMemo } from "react";
 import { useNavigate, NavLink } from "react-router-dom";
+import { Helmet } from "react-helmet";
 import Button from "../Components/button";
 // import Card from "../Components/card";
 import ExpCard from "../Components/expCard";
@@ -9,6 +10,7 @@ import Footer from "../Components/footer";
 import User from "../assets/myself.webp";
 import Arrow from "../assets/arrow.svg";
 import Social from "../Components/social";
+import CommonModal from "../Components/modal";
 // Back to top FAB
 import Toolbar from "@mui/material/Toolbar";
 
@@ -91,12 +93,13 @@ const AboutMe = (props) => {
 
   const skills = {
     Language: ["Python", "C++", "C", "Java"],
-    "Web Development": [
+    Development: [
       "HTML",
       "CSS/SCSS",
       "Bootstap",
       "JavaScript",
       "ReactJS",
+      "NextJS",
       "Material UI",
       "Node Js",
       "Express",
@@ -219,6 +222,9 @@ const AboutMe = (props) => {
     },
   ];
 
+  const [showCertification, setShowCertification] = useState(false);
+  const [showProjects, setShowProjects] = useState(false);
+
   const portfolioHandler = () => {
     console.log("Im Clicked");
   };
@@ -229,260 +235,284 @@ const AboutMe = (props) => {
   };
 
   const certificationHandler = () => {
+    setShowCertification(true);
     console.log("redirect to show all");
   };
 
   const projectHandler = () => {
+    setShowProjects(true);
     console.log("redirect to show all");
   };
 
   return (
-    <div className="Container">
-      <div className="page-container">
-        {isMobile && (
-          <div className="profilePics">
-            <img
-              className="profileBackground"
-              src={ProfileBackground}
-              loading="lazy"
-              alt="Profile-Background"
-            />
-            <div className="profileLogo">
+    <>
+      <Helmet>
+        <title>Harender Kumar</title>
+        <meta
+          name="description"
+          content="Hi, My name is Harender Kumar. Welcome to my personal website."
+        />
+      </Helmet>
+      <div className="Container">
+        <div className="page-container">
+          {isMobile && (
+            <div className="profilePics">
               <img
-                className="profile"
+                className="profileBackground"
+                src={ProfileBackground}
                 loading="lazy"
-                src={User}
-                alt="Profile"
+                alt="Profile-Background"
               />
-              <Social />
+              <div className="profileLogo">
+                <img
+                  className="profile"
+                  loading="lazy"
+                  src={User}
+                  alt="Profile"
+                />
+                <Social />
+              </div>
             </div>
-          </div>
-        )}
-        <Toolbar id="back-to-top-anchor" />
-        <div className="header">
-          <div className="aboutMe">
-            <h1>Harender Kumar</h1>
-            <h3>Software Engineer | Developer | Full Stack</h3>
-            <p>
-              I'm an experienced Software Developer adept in bringing forth
-              expertise in design, installation, testing and maintenance of
-              software systems. Proficient in various platforms and languages
-              like MERN stack, python, SQL. Experienced with the latest
-              cutting-edge development tools and procedures. Recognized for
-              commitment and speed. Able to effectively self-manage during
-              independent projects, as well as collaborate as part of a
-              productive team.
-            </p>
-            <div className="btn-group">
-              <Button
-                className="grn-btn"
-                img={Arrow}
-                loading="lazy"
-                type="button"
-                onClick={resumeHandler}
-                btnName="View Resume"
-              />
-              {/* <Button
+          )}
+          <Toolbar id="back-to-top-anchor" />
+          <div className="header">
+            <div className="aboutMe">
+              <h1>Harender Kumar</h1>
+              <h3>Software Engineer | Developer | Full Stack</h3>
+              <p>
+                I'm an experienced Software Developer adept in bringing forth
+                expertise in design, installation, testing and maintenance of
+                software systems. Proficient in various platforms and languages
+                like MERN stack, python, SQL. Experienced with the latest
+                cutting-edge development tools and procedures. Recognized for
+                commitment and speed. Able to effectively self-manage during
+                independent projects, as well as collaborate as part of a
+                productive team.
+              </p>
+              <div className="btn-group">
+                <Button
+                  className="grn-btn"
+                  img={Arrow}
+                  loading="lazy"
+                  type="button"
+                  onClick={resumeHandler}
+                  btnName="View Resume"
+                />
+                {/* <Button
                 className="drk-btn"
                 img={ResumeLogo}
                 type="button"
                 onClick={resumeHandler}
                 btnName="View Resume"
               /> */}
+              </div>
             </div>
+            {!isMobile && (
+              <img
+                className="profile"
+                loading="lazy"
+                src={User}
+                alt="Harender_Profile_Image"
+              />
+            )}
           </div>
-          {!isMobile && (
-            <img className="profile" loading="lazy" src={User} alt="Profile" />
-          )}
         </div>
-      </div>
 
-      <div className="subContainer">
-        <h3>Experience</h3>
-        {/* <p>
+        {/* Experience */}
+
+        <div className="subContainer">
+          <h3>Experience</h3>
+          {/* <p>
           I have more than 1 year' experience building software for clients all
           over the world. Below is a quick overview of my main technical skill
           sets and technologies I use. Want to find out more about my experience
           & projects? Check out my online resume and project portfolio.
         </p> */}
 
-        <div className="skills">
-          {experienceData.map((item, index) => (
-            <ExpCard
-              key={index}
-              img={item.img}
-              company={item.company}
-              position={item.position}
-              type={item.type}
-              from={item.from}
-              to={item.to}
-              location={item.location}
-              skills={item.skills}
-            />
-          ))}
+          <div className="skills">
+            {experienceData.map((item, index) => (
+              <ExpCard
+                key={index}
+                img={item.img}
+                company={item.company}
+                position={item.position}
+                type={item.type}
+                from={item.from}
+                to={item.to}
+                location={item.location}
+                skills={item.skills}
+              />
+            ))}
+          </div>
         </div>
-      </div>
 
-      {/* Education */}
+        {/* skills */}
 
-      <div className="subContainer">
-        <h3>Education</h3>
-        {/* <p>
-          I have completed my B.Tech from 
-        </p> */}
-
-        <div className="skills">
-          {EducationData.map((item, index) => (
-            <ExpCard
-              key={index}
-              img={item.img}
-              company={item.company}
-              position={item.position}
-              type={item.type}
-              from={item.from}
-              to={item.to}
-              location={item.location}
-              skills={item.skills}
-            />
-          ))}
-        </div>
-      </div>
-
-      {/* Licenses */}
-
-      <div className="subContainer">
-        <h3>Licenses & Certifications</h3>
-        {/* <p>
-          I have completed my B.Tech from 
-        </p> */}
-
-        <div className="skills" style={{ margin: "30px 0" }}>
-          {CertificationData.map((item, index) => (
-            <CertiCard
-              key={index}
-              img={item.img}
-              Source={item.Source}
-              title={item.title}
-              issued={item.issued}
-              link={item.link}
-            />
-          ))}
-        </div>
-        <button
-          className="cardBottomBtn"
-          type="button"
-          onClick={certificationHandler}
-        >
-          Show all licenses & certifications{" "}
-          <i className="fa-solid fa-right-long"></i>
-        </button>
-      </div>
-
-      {/* Projects */}
-
-      <div className="subContainer">
-        <h3>Projects</h3>
-        {/* <p>
-          I have completed my B.Tech from 
-        </p> */}
-
-        <div className="skills" style={{ margin: "30px 0" }}>
-          {projectsData.map((item, index) => (
-            <ProjectCard key={index} title={item.title} about={item.about} />
-          ))}
-        </div>
-        <button
-          className="cardBottomBtn"
-          type="button"
-          onClick={projectHandler}
-        >
-          Show all projects <i className="fa-solid fa-right-long"></i>
-        </button>
-      </div>
-
-      <div className="subContainer">
-        <h3>Skills</h3>
-        <p>
-          I'm a proficient developer specializing in Python, with a strong track
-          record in building full-stack web applications using ReactJS, NodeJS,
-          MongoDB, and Flask. Proficient in HTML, CSS, and data engineering with
-          NumPy, I'm dedicated to staying current with emerging technologies to
-          ensure optimal results.
-        </p>
-        <div>
-          {Object.keys(skills).map((value, index) => (
-            <div className="skill-row" key={index}>
-              <p className="topic">{value}</p>
-              <div className="skillsGroup">
-                {skills[value].map((skill, arrayIndex) => (
-                  <p className="skill" key={arrayIndex}>
-                    {skill}
-                  </p>
-                ))}
+        <div className="subContainer">
+          <h3>Skills</h3>
+          <p>
+            I'm a proficient developer specializing in Python, with a strong
+            track record in building full-stack web applications using ReactJS,
+            NodeJS, MongoDB, and Flask. Proficient in HTML, CSS, and data
+            engineering with NumPy, I'm dedicated to staying current with
+            emerging technologies to ensure optimal results.
+          </p>
+          <div>
+            {Object.keys(skills).map((value, index) => (
+              <div className="skill-row" key={index}>
+                <p className="topic">{value}</p>
+                <div className="skillsGroup">
+                  {skills[value].map((skill, arrayIndex) => (
+                    <p className="skill" key={arrayIndex}>
+                      {skill}
+                    </p>
+                  ))}
+                </div>
               </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Education */}
+
+        <div className="subContainer">
+          <h3>Education</h3>
+          {/* <p>
+          I have completed my B.Tech from 
+        </p> */}
+
+          <div className="skills">
+            {EducationData.map((item, index) => (
+              <ExpCard
+                key={index}
+                img={item.img}
+                company={item.company}
+                position={item.position}
+                type={item.type}
+                from={item.from}
+                to={item.to}
+                location={item.location}
+                skills={item.skills}
+              />
+            ))}
+          </div>
+        </div>
+
+        {/* Licenses */}
+
+        <div className="subContainer">
+          <h3>Licenses & Certifications</h3>
+
+          <div className="skills" style={{ margin: "30px 0" }}>
+            {CertificationData.map((item, index) => (
+              <CertiCard
+                key={index}
+                img={item.img}
+                Source={item.Source}
+                title={item.title}
+                issued={item.issued}
+                link={item.link}
+              />
+            ))}
+          </div>
+          <button
+            className="cardBottomBtn"
+            type="button"
+            onClick={certificationHandler}
+          >
+            Show all licenses & certifications{" "}
+            <i className="fa-solid fa-right-long"></i>
+          </button>
+          <CommonModal
+            show={showCertification}
+            onHide={() => setShowCertification(false)}
+            title="Licenses & Certifications"
+          />
+        </div>
+
+        {/* Projects */}
+
+        <div className="subContainer">
+          <h3>Projects</h3>
+
+          <div className="skills" style={{ margin: "30px 0" }}>
+            {projectsData.map((item, index) => (
+              <ProjectCard key={index} title={item.title} about={item.about} />
+            ))}
+          </div>
+          <button
+            className="cardBottomBtn"
+            type="button"
+            onClick={projectHandler}
+          >
+            Show all projects <i className="fa-solid fa-right-long"></i>
+          </button>
+          <CommonModal
+            show={showProjects}
+            onHide={() => setShowProjects(false)}
+            title="Projects"
+          />
+        </div>
+
+        {/* Publications */}
+
+        <div className="subContainer">
+          <h3>Publications</h3>
+          <div className="publication">
+            <p className="pubTitle">
+              Extractive Text Summarization Using Natural Language Processing
+              (NLP)
+            </p>
+            <p className="pubAbout">
+              My research paper during my BTech studies primarily focused on the
+              application of Natural Language Processing (NLP) techniques for
+              extractive text summarization. This research aimed to develop a
+              streamlined approach that efficiently summarizes large volumes of
+              textual data. By leveraging NLP, I explored methods to
+              automatically extract and condense relevant information from
+              extensive text sources, ultimately improving the accessibility and
+              usability of such data.
+            </p>
+          </div>
+        </div>
+
+        {/* Honors and awards */}
+
+        <div className="subContainer">
+          <h3>Honors & awards</h3>
+          <div className="awardsContainer">
+            <div className="award">
+              <p className="awardTitle">
+                National Standard Examination in Physics (IAPT)
+              </p>
+              <p className="awardAbout">
+                Achieved rank 3 within my Center and consistently ranked among
+                the Top 10% of participants
+              </p>
             </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Publications */}
-
-      <div className="subContainer">
-        <h3>Publications</h3>
-        <div className="publication">
-          <p className="pubTitle">
-            Extractive Text Summarization Using Natural Language Processing
-            (NLP)
-          </p>
-          <p className="pubAbout">
-            My research paper during my BTech studies primarily focused on the
-            application of Natural Language Processing (NLP) techniques for
-            extractive text summarization. This research aimed to develop a
-            streamlined approach that efficiently summarizes large volumes of
-            textual data. By leveraging NLP, I explored methods to automatically
-            extract and condense relevant information from extensive text
-            sources, ultimately improving the accessibility and usability of
-            such data.
-          </p>
-        </div>
-      </div>
-
-      {/* Honors and awards */}
-
-      <div className="subContainer">
-        <h3>Honors & awards</h3>
-        <div className="awardsContainer">
-          <div className="award">
-            <p className="awardTitle">
-              National Standard Examination in Physics (IAPT)
-            </p>
-            <p className="awardAbout">
-              Achieved rank 3 within my Center and consistently ranked among the
-              Top 10% of participants
-            </p>
-          </div>
-          <div className="award">
-            <p className="awardTitle">National Children's Science Congress</p>
-            <p className="awardAbout">
-              I had the honor of representing my school at the regional level
-              and received recognition for an outstanding presentation at the
-              National Children's Science Congress.
-            </p>
-          </div>
-          <div className="award">
-            <p className="awardTitle">Jee Mains</p>
-            <p className="awardAbout">
-              Scored in the top 98 percentile in the JEE Mains, where over 13
-              lakhs students appeared.
-            </p>
+            <div className="award">
+              <p className="awardTitle">National Children's Science Congress</p>
+              <p className="awardAbout">
+                I had the honor of representing my school at the regional level
+                and received recognition for an outstanding presentation at the
+                National Children's Science Congress.
+              </p>
+            </div>
+            <div className="award">
+              <p className="awardTitle">Jee Mains</p>
+              <p className="awardAbout">
+                Scored in the top 98 percentile in the JEE Mains, where over 13
+                lakhs students appeared.
+              </p>
+            </div>
           </div>
         </div>
+
+        {/* <FAB /> */}
+
+        <Footer />
       </div>
-
-      {/* <FAB /> */}
-
-      <Footer />
-    </div>
+    </>
   );
 };
 

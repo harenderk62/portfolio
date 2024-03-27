@@ -1,4 +1,5 @@
 import { useMemo } from "react";
+import { Helmet } from "react-helmet";
 import Button from "../Components/button";
 import Send from "../assets/send.svg";
 import User from "../assets/user.png";
@@ -11,6 +12,13 @@ const Resume = () => {
   const buttonHandler = () => {};
   return (
     <>
+      <Helmet>
+        <title>Harender Kumar - Software Engineer Resume</title>
+        <meta
+          name="description"
+          content="Experienced Software Engineer proficient in MERN stack, Python, SQL. View my resume for more information."
+        />
+      </Helmet>
       <Toolbar id="back-to-top-anchor" />
       <div className="resume-page">
         <p className="header">Resume</p>
@@ -42,7 +50,7 @@ const Resume = () => {
           <hr />
 
           <div className="profile">
-            <img src={User} alt="User" />
+            <img src={User} loading="lazy" alt="Harender_Profile_Pic" />
             <p>
               I'm an experienced Software Developer adept in bringing forth
               expertise in design, installation, testing and maintenance of
@@ -66,7 +74,7 @@ const Resume = () => {
               </p>
               <p>Jun 2022 - Present</p>
             </div>
-            <ul>
+            <ul className="list-item">
               <li>
                 Developed and deployed Azure OpenAI ChatGPT (PolicyGPT) on AWS
                 services, allowing customers to chat and inquire about various
@@ -99,21 +107,12 @@ const Resume = () => {
               </p>
               <p>Jun 2022 - Present</p>
             </div>
-            <ul>
+            <ul className="list-item">
               <li>
-                Developed and deployed Azure OpenAI ChatGPT (PolicyGPT) on AWS
-                services, allowing customers to chat and inquire about various
-                policies, enhancing user engagement and satisfaction.
-              </li>
-              <li>
-                Effectively integrated Zoho PageSense and Google Analytics v4 on
-                customer portal, enabling comprehensive tracking and analysis of
-                user behavior, production issues and website performance.{" "}
-              </li>
-              <li>
-                Implemented automated reporting system for ESB APIs in
-                production, generating hourly emails with success and failure
-                counts of the APIs for improved monitoring and efficiency.{" "}
+                Worked on Market Mix Modelling for a CPG company, utilizing a
+                hierarchical model to gain insights into how diverse marketing
+                strategies, media campaigns, vehicles, and channels contribute
+                to sales growth, effectively boosting company revenue.
               </li>
             </ul>
 
@@ -126,21 +125,14 @@ const Resume = () => {
               </p>
               <p>Jun 2022 - Present</p>
             </div>
-            <ul>
+            <ul className="list-item">
               <li>
-                Developed and deployed Azure OpenAI ChatGPT (PolicyGPT) on AWS
-                services, allowing customers to chat and inquire about various
-                policies, enhancing user engagement and satisfaction.
+                Developed e-commerce website for the client using MERN stacks
               </li>
               <li>
-                Effectively integrated Zoho PageSense and Google Analytics v4 on
-                customer portal, enabling comprehensive tracking and analysis of
-                user behavior, production issues and website performance.{" "}
-              </li>
-              <li>
-                Implemented automated reporting system for ESB APIs in
-                production, generating hourly emails with success and failure
-                counts of the APIs for improved monitoring and efficiency.{" "}
+                Applied and compared 6 regression models to accurately predict
+                game completion time in seconds, evaluating their performance
+                across 3 different metrics.
               </li>
             </ul>
           </div>
@@ -163,7 +155,7 @@ const Resume = () => {
           <div className="certifications">
             <p className="section-title">Certifications</p>
 
-            <ul>
+            <ul className="list-item">
               <li>
                 React - The Complete Guide (incl Hooks, React Router, Redux)
               </li>
@@ -183,16 +175,22 @@ const Resume = () => {
                 <p>Python, C++, C and MySQL</p>
               </div>
               <div className="row">
-                <p className="topic">Web Development :</p>
-                <p>Python, C++, C and MySQL</p>
+                <p className="topic">Development :</p>
+                <p>
+                  HTML, CSS/SCSS, Bootstrap, JavaScript, ReactJS, NodeJS,
+                  Express
+                </p>
               </div>
               <div className="row">
                 <p className="topic">Database :</p>
-                <p>Python, C++, C and MySQL</p>
+                <p>MongoDB, SQL, PostgreSQL</p>
               </div>
               <div className="row">
                 <p className="topic">Miscellaneous :</p>
-                <p>Python, C++, C and MySQL</p>
+                <p>
+                  Git, AWS EC2, Azure OpenAI, Lang Chain Open AI, NumPy, Pandas,
+                  Matplotlib, Scikit-learn, NLTK
+                </p>
               </div>
             </div>
           </div>

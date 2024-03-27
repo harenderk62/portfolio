@@ -16,7 +16,7 @@ const SideNav = () => {
       { name: "About Me", icon: "person_pin", route: "/" },
       // { name: "Portfolio", icon: "work", route: "/portfolio" },
       // { name: "Skills", icon: "auto_fix_high", route: "/skills" },
-      { name: "Genie", icon: "auto_awesome", route: "/" },
+      { name: "GenAI Chatbot", icon: "auto_awesome" },
       // { name: "Resume", icon: "description", route: "/resume" },
       // {
       //   name: "Certificates",
@@ -40,7 +40,7 @@ const SideNav = () => {
   };
 
   return (
-    <div className="container">
+    <div className="sideNavContainer">
       <div className="info">
         <p className="info-name">Harender Kumar</p>
         <img src={User} alt="profile" loading="lazy" title="Harender Kumar" />
@@ -58,7 +58,7 @@ const SideNav = () => {
         <ul>
           {menuItems.map((item, index) => (
             <li key={index} onClick={() => activeTabHandler(item.name)}>
-              {item.name !== "Genie" ? (
+              {!item.name.includes("Chatbot") ? (
                 <NavLink
                   to={item.route}
                   activeclassname="active"
