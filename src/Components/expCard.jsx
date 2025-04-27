@@ -1,24 +1,32 @@
-const ExpCard = (props) => {
+// src/Components/expCard.js
+import React from 'react';
+
+const ExpCard = ({ position, from, to, duration, skills, showConnector }) => {
+  // Split skills into chunks of 7 for table-like display
+  const skillChunks = [];
+  for (let i = 0; i < skills.length; i += 7) {
+    skillChunks.push(skills.slice(i, i + 7));
+  }
+
   return (
-    <div className="expCard">
-      <img className="logo" loading="lazy" src={props.img} alt="cmpLogo" />
-      <div className="exp-info">
-        <p className="position">{props.position}</p>
-        <p className="company">
-          {props.company} . {props.type}
+    <div className={`position-card ${showConnector ? 'with-connector' : ''}`}>
+      <div className="position-header">
+        <h4>{position}</h4>
+        <p className="duration">
+          {from} - {to} · {duration}
         </p>
-        <p className="timePeriod">
-          {props.from}-{props.to}
-        </p>
-        <p className="location">{props.location}</p>
-        <p className="skillsContainer">
-          <span style={{ fontWeight: "bold" }}>Skills: </span>
-          {props.skills.map((value, index) => (
-            <span className="skill-G" key={index}>
-              {value}{" "}
-            </span>
-          ))}
-        </p>
+      </div>
+      
+      <div className="skills-section">
+        {skillChunks.map((chunk, index) => (
+          <div key={index} className="skills-row">
+            {chunk.map((skill, skillIndex) => (
+              <span key={skillIndex} className="skill-tag">
+                {skill}
+              </span>
+            ))}
+          </div>
+        ))}
       </div>
     </div>
   );

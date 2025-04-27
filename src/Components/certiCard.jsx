@@ -1,30 +1,26 @@
-import Button from "./button";
-import Arrow from "../assets/arrow.svg";
+import React from 'react';
 
-const CertiCard = (props) => {
+const CertiCard = ({ img, Source, title, issued, link }) => {
   const redirectHandler = () => {
-    // handle redirect
+    if (link) window.open(link, '_blank');
   };
 
   return (
-    <div className="expCard">
-      <img className="logo" loading="lazy" src={props.img} alt="cmpLogo" />
-      <div className="exp-info">
-        <p className="position">{props.title}</p>
-        <p className="company">{props.Source}</p>
-        <p className="timePeriod">{props.issued}</p>
-        {/* <Button
-          className="grn-btn"
-          img={Arrow}
-          type="button"
-          onClick={redirectHandler}
-          btnName="Show credential"
-        /> */}
-        <button className="redirectBtn" type="button" onClick={redirectHandler}>
-          {/* <img src={Arrow} alt="logo" /> */}
-          Show Credential <i className="fa fa-external-link"></i>
+    <div className="certi-card">
+      <div className="card-content">
+        <div className="card-header">
+          <img className="provider-logo" src={img} alt={`${Source} logo`} />
+          <div className="provider-info">
+            <span className="provider-name">{Source}</span>
+            <span className="issue-date">{issued}</span>
+          </div>
+        </div>
+        <h3 className="certi-title">{title}</h3>
+        <button className="credential-btn" onClick={redirectHandler}>
+          Show Credential <i className="fas fa-external-link-alt"></i>
         </button>
       </div>
+      <div className="card-ribbon"></div>
     </div>
   );
 };

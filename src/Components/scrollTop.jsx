@@ -37,6 +37,7 @@ const ScrollTop = (props) => {
           position: "fixed",
           bottom: isMobile ? 75 : 36,
           right: isMobile ? 66 : 76,
+          zIndex: 10,
         }}
       >
         <Fab

@@ -1,27 +1,62 @@
 import Modal from "react-bootstrap/Modal";
-import Loader from "../assets/Loader.gif";
+import Button from "react-bootstrap/Button";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./modal.scss";
 
-const CommonModal = (props) => {
+const CommonModal = ({ show, onHide, title, certificationData = [] }) => {
   return (
     <Modal
-      {...props}
+      show={show}
+      onHide={onHide}
       size="lg"
-      aria-labelledby="contained-modal-title-vcenter"
       centered
+      backdrop="static"
+      className="certification-modal"
     >
-      <Modal.Header closeButton>
-        <Modal.Title id="contained-modal-title-vcenter">
-          {props.title}
-        </Modal.Title>
+      <Modal.Header closeButton className="modal-header">
+        <Modal.Title className="modal-title">{title}</Modal.Title>
       </Modal.Header>
-      <Modal.Body>
-        <div className="loader">
-          <img src={Loader} alt="loading" />
-          <p>Dev in Progess...</p>
+      <Modal.Body className="modal-body">
+        <div className="certification-container">
+          {certificationData.map((cert, index) => (
+            <div key={index} className="certification-card">
+              <div className="certification-content">
+                <div className="certification-logo-container">
+                  <img 
+                    src={cert.img} 
+                    alt={`${cert.Source} logo`} 
+                    className="certification-logo"
+                  />
+                </div>
+                <div className="certification-details">
+                  <div className="certification-header">
+                    <h3 className="certification-name">{cert.title}</h3>
+                    <div className="certification-meta">
+                      <span className="certification-provider">{cert.Source}</span>
+                      <span className="certification-date">{cert.issued}</span>
+                    </div>
+                  </div>
+                </div>
+                <div className="credential-btn-container">
+                  <Button 
+                    variant="outline-primary" 
+                    className="credential-btn"
+                    onClick={() => window.open(cert.link, '_blank')}
+                  >
+                    Show Credential <i className="fas fa-external-link-alt"></i>
+                  </Button>
+                </div>
+              </div>
+              {index !== certificationData.length - 1 && <div className="certification-divider"></div>}
+            </div>
+          ))}
         </div>
       </Modal.Body>
+      <Modal.Footer className="modal-footer">
+        <Button variant="primary" onClick={onHide}>
+          Close
+        </Button>
+      </Modal.Footer>
     </Modal>
   );
 };

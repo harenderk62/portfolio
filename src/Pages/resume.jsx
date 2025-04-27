@@ -66,7 +66,7 @@ const Resume = () => {
           <hr />
 
           <div className="experience">
-            <p className="section-title">Experience</p>
+            <p className="resumeTitle">Experience</p>
             <div className="company-detail">
               <p className="company">
                 <span style={{ fontWeight: "bold" }}>Software Developer</span>,
@@ -139,7 +139,7 @@ const Resume = () => {
 
           {/* recogination */}
           {/* <div className="recoginations">
-            <p className="section-title">Recoginations</p>
+            <p className="resumeTitle">Recoginations</p>
 
             <ul>
               <li>
@@ -153,7 +153,7 @@ const Resume = () => {
 
           {/* Certifications */}
           <div className="certifications">
-            <p className="section-title">Certifications</p>
+            <p className="resumeTitle">Certifications</p>
 
             <ul className="list-item">
               <li>
@@ -167,7 +167,7 @@ const Resume = () => {
 
           {/* skills */}
           <div className="skills">
-            <p className="section-title">Skills</p>
+            <p className="resumeTitle">Skills</p>
 
             <div className="sk-cont">
               <div className="row">

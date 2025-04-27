@@ -1,0 +1,11 @@
+// src/styles/_vendors.scss
+
+// Material UI Overrides
+.MuiButtonBase-root {
+    color: #fff !important;
+    background-color: #54b689 !important;
+    &:hover {
+      background-color: #498f6e !important;
+    }
+  }
+  

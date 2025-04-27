@@ -1,0 +1,41 @@
+// src/styles/_common.scss
+@use 'variables' as *;
+
+// Common styling for the section containers
+.subContainer {
+  background-color: #fff;
+  border: 1px solid $borderColor;
+  border-radius: 15px; // Use the last defined radius from original file
+  margin: 2rem auto;
+  max-width: 64rem;
+  padding: 1rem; // Use the last defined padding
+  position: relative; // Needed for absolute positioning of cardBottomBtn
+
+  h2 {
+    margin: 0;
+    padding: 0.2rem 1rem;
+    font-size: 2rem;
+    border-left: 5px solid #54b689;
+  }
+}
+
+// Common button style for "Show All"
+.cardBottomBtn {
+  position: absolute;
+  background-color: #fff;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  border: none;
+  border-top: 1px solid $borderColor;
+  border-radius: 0 0 15px 15px;
+  height: 40px;
+  cursor: pointer;
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 15px;
+  font-weight: bold;
+
+  &:hover {
+    background-color: $backgroundColor;
+  }
+}

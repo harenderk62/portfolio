@@ -1,0 +1,35 @@
+// src/styles/_responsive.scss
+@use 'variables' as *;
+
+// General Mobile Overrides
+@media screen and (max-width: 768px) {
+  // Adjustments for the common section container on mobile
+  .subContainer {
+    margin: 1rem 0;
+    padding: 1rem;
+    border-radius: 0;
+  }
+
+  // Adjustments for the common "Show All" button on mobile
+  .cardBottomBtn {
+    border-radius: 0;
+    // Height is the same as desktop, no change needed unless specified
+  }
+}
+
+// Other breakpoints from original file
+// Hides the desktop profile image on medium screens
+@media screen and (max-width: 1000px) and (min-width: 768px) {
+  .page-container .header .profile {
+     display: none;
+  }
+}
+
+// You can add the 1100px/1200px breakpoints here if the commented-out
+// padding/margin rules for .subContainer were necessary.
+// Example:
+// @media screen and (max-width: 1100px) and (min-width: 768px) {
+//   .subContainer {
+//     margin: 0 auto; // This was present in original comments
+//   }
+// }

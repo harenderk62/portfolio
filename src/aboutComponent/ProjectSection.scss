@@ -1,0 +1,153 @@
+.projects-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+
+  .section-title {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #333;
+    text-align: center;
+    position: relative;
+
+    &::after {
+      content: '';
+      display: block;
+      width: 80px;
+      height: 4px;
+      background: #3f51b5;
+      margin: 0.5rem auto 0;
+      border-radius: 2px;
+    }
+  }
+
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .view-all-btn {
+    display: block;
+    margin: 2rem auto 0;
+    padding: 0.75rem 1.5rem;
+    background: transparent;
+    color: #3f51b5;
+    border: 2px solid #3f51b5;
+    border-radius: 30px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background: #3f51b5;
+      color: white;
+      transform: translateY(-2px);
+    }
+
+    i {
+      margin-left: 0.5rem;
+      transition: transform 0.3s ease;
+    }
+
+    &:hover i {
+      transform: translateX(3px);
+    }
+  }
+}
+
+.project-card {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+
+  .project-image-container {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+
+    .project-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .project-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.7));
+    }
+
+    &:hover .project-image {
+      transform: scale(1.05);
+    }
+  }
+
+  .project-content {
+    padding: 1.5rem;
+
+    .project-title {
+      font-size: 1.25rem;
+      margin: 0 0 1rem 0;
+      color: #2c3e50;
+    }
+
+    .project-description {
+      color: #555;
+      margin-bottom: 1rem;
+      line-height: 1.5;
+    }
+
+    .project-highlights {
+      margin: 0 0 1.5rem 0;
+      padding-left: 1.2rem;
+      color: #555;
+
+      li {
+        margin-bottom: 0.5rem;
+        position: relative;
+
+        &::before {
+          content: '▹';
+          position: absolute;
+          left: -1.2rem;
+          color: #3f51b5;
+        }
+      }
+    }
+
+    .project-link-btn {
+      background: #f5f7ff;
+      color: #3f51b5;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+
+      &:hover {
+        background: #3f51b5;
+        color: white;
+      }
+
+      i {
+        font-size: 0.8rem;
+      }
+    }
+  }
+}

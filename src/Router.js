@@ -5,36 +5,32 @@ import Skills from "./Pages/skills";
 import Resume from "./Pages/resume";
 import Certificate from "./Pages/certificate";
 import Connect from "./Pages/connect";
-import SideNav from "./SideNav/index";
-import MobileNav from "./SideNav/indexMobile";
-import { useMediaQuery } from "react-responsive";
-import FAB from "./Components/FAB";
+import NavBar from "./SideNav/index";
+import FAB from "./Components/FAB"
 import ScrollTop from "./Components/scrollTop";
 
 const FabConditionalRenderer = () => {
-  const location = useLocation();
+ const location = useLocation();
 
-  return ["/resume", "/contact"].includes(location.pathname) ? null : <FAB />;
+ return ["/resume", "/contact"].includes(location.pathname) ? null : <FAB />;
 };
 
-const App = (props) => {
-  const isMobile = useMediaQuery({ maxWidth: 768 });
-
+const App = () => {
+  
   return (
     <BrowserRouter>
-      {isMobile ? <MobileNav /> : <SideNav />}
-      <Routes>
+    <NavBar />
+     <Routes>
         <Route path="/" Component={AboutMe} />
-        <Route path="/portfolio" Component={Portfolio} />
-        <Route path="/skills" Component={Skills} />
+        <Route path="/about" Component={AboutMe} />
         <Route path="/resume" Component={Resume} />
         <Route path="/certificates" Component={Certificate} />
         <Route path="/contact" Component={Connect} />
       </Routes>
       <FabConditionalRenderer />
-      <ScrollTop {...props} />
+      <ScrollTop />
     </BrowserRouter>
   );
-};
+}; 
 
 export default App;

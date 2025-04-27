@@ -1,0 +1,158 @@
+// src/aboutComponent/EducationSection.scss
+.education-container {
+  max-width: 64rem;
+  margin: 2rem auto;
+
+  .section-title {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #333;
+    text-align: center;
+    border-radius: 18px;
+    
+    &::after {
+      content: '';
+      display: block;
+      width: 80px;
+      height: 4px;
+      background: #3f51b5;
+      margin: 0.5rem auto 0;
+      border-radius: 2px;
+    }
+  }
+
+  .education-timeline {
+    margin: 0 auto;
+    max-width: 750px;
+    position: relative;
+    padding-left: 30px;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 7px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: #e0e0e0;
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 2rem;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    .timeline-marker {
+      position: absolute;
+      left: -30px;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: #3f51b5;
+      border: 3px solid white;
+      box-shadow: 0 0 0 2px #3f51b5;
+      z-index: 1;
+    }
+
+    .timeline-content {
+      margin-left: 20px;
+    }
+  }
+
+  .edu-card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    padding: 1.5rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+    }
+
+
+    .edu-header {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 1rem;
+
+      .edu-logo {
+        width: 60px;
+        height: 60px;
+        object-fit: contain;
+        margin-right: 1.25rem;
+        border-radius: 8px;
+        padding: 5px;
+        background: white;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .edu-info {
+        flex: 1;
+
+        .institution {
+          font-size: 1.25rem;
+          margin: 0 0 0.25rem 0;
+          color: #333;
+          font-weight: 600;
+        }
+
+        .degree {
+          font-size: 1rem;
+          margin: 0 0 0.25rem 0;
+          color: #3f51b5;
+          font-weight: 500;
+        }
+
+        .field {
+          font-size: 0.95rem;
+          margin: 0 0 0.25rem 0;
+          color: #666;
+        }
+
+        .duration {
+          font-size: 0.9rem;
+          margin: 0;
+          color: #888;
+          font-weight: 500;
+        }
+      }
+    }
+
+    .edu-skills {
+      display: flex;
+      align-items: flex-start;
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 1px dashed #e0e0e0;
+
+      .skills-icon {
+        font-size: 1.2rem;
+        margin-right: 0.75rem;
+        color: #3f51b5;
+      }
+
+      .skills-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+
+        .skill-tag {
+          background: #f0f4ff;
+          padding: 0.4rem 0.8rem;
+          border-radius: 4px;
+          font-size: 0.85rem;
+          color: #3f51b5;
+          font-weight: 500;
+        }
+      }
+    }
+  }
+}

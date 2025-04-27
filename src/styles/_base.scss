@@ -1,0 +1,8 @@
+// src/styles/_base.scss
+@use 'variables' as *; // Use modern @use for variables
+
+.Container {
+  background-color: $backgroundColor;
+}
+
+// Add any other global resets or body styles here if needed

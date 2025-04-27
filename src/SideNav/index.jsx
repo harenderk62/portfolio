@@ -1,106 +1,116 @@
-import { useState, useMemo } from "react";
-import { NavLink, useNavigate } from "react-router-dom";
-import Social from "../Components/social";
-
-// Redirect Images
-import User from "../assets/myself.webp";
-
-// List Images
+import { useState, useEffect } from "react";
+import { NavLink } from "react-router-dom";
 import "./sideNav.scss";
+import logo from '../assets/H-removed.webp';
+import { FaGithub, FaLinkedin, FaUser, FaRobot } from 'react-icons/fa';
+import { HiOutlineLogin } from 'react-icons/hi';
 
-const SideNav = () => {
-  // const navigate = useNavigate();
+const NavBar = () => {
+  const [typedText, setTypedText] = useState("");
+  const [index, setIndex] = useState(0);
+  const [isDeleting, setIsDeleting] = useState(false);
+  const [isSticky, setIsSticky] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  
+  const phrases = [
+    "Harender Kumar",
+    "Software Developer",
+    "Full Stack Developer"
+  ];
 
-  const menuItems = useMemo(
-    () => [
-      { name: "About Me", icon: "person_pin", route: "/" },
-      // { name: "Portfolio", icon: "work", route: "/portfolio" },
-      // { name: "Skills", icon: "auto_fix_high", route: "/skills" },
-      { name: "GenAI Chatbot", icon: "auto_awesome" },
-      // { name: "Resume", icon: "description", route: "/resume" },
-      // {
-      //   name: "Certificates",
-      //   icon: "workspace_premium",
-      //   route: "/certificates",
-      // },
-      // { name: "Contact", icon: "contact_mail", route: "/contact" },
-    ],
-    []
-  );
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsSticky(window.scrollY > 50);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
-  var activeTabFromSession = sessionStorage.getItem("activeTab");
+  useEffect(() => {
+    const currentPhrase = phrases[index];
+    let timeout;
 
-  const [activeTab, setActiveTab] = useState(
-    activeTabFromSession ? activeTabFromSession : "About Me"
-  );
+    if (!isDeleting) {
+      if (typedText.length < currentPhrase.length) {
+        timeout = setTimeout(() => {
+          setTypedText(currentPhrase.substring(0, typedText.length + 1));
+        }, 150);
+      } else {
+        timeout = setTimeout(() => setIsDeleting(true), 1500);
+      }
+    } else {
+      if (typedText.length > 0) {
+        timeout = setTimeout(() => {
+          setTypedText(typedText.substring(0, typedText.length - 1));
+        }, 100);
+      } else {
+        setIsDeleting(false);
+        setIndex((prev) => (prev + 1) % phrases.length);
+      }
+    }
 
-  const activeTabHandler = (tab) => {
-    sessionStorage.setItem("activeTab", tab);
-    setActiveTab(tab);
-  };
+    return () => clearTimeout(timeout);
+  }, [typedText, index, isDeleting]);
 
   return (
-    <div className="sideNavContainer">
-      <div className="info">
-        <p className="info-name">Harender Kumar</p>
-        <img src={User} alt="profile" loading="lazy" title="Harender Kumar" />
-        <p className="info-about">
-          Hi, My name is Harender Kumar and I'm a Software Engineer. Welcome to
-          my personal Website
-        </p>
-      </div>
+    <nav className={`navbar ${isSticky ? 'sticky' : ''}`}>
+      <div className="navbar-container">
+        <div className="logo">
+          <NavLink to={"/"}>
+            <div className="logo-wrapper">
+              <img src={logo} alt="Logo" className="logo-image" />
+              <div className="logo-text">
+                <span>{typedText}</span>
+                <span className="cursor">|</span>
+              </div>
+            </div>
+          </NavLink>
+        </div>
 
-      <hr />
-      <Social />
-      <hr />
-
-      <div className="list">
-        <ul>
-          {menuItems.map((item, index) => (
-            <li key={index} onClick={() => activeTabHandler(item.name)}>
-              {!item.name.includes("Chatbot") ? (
-                <NavLink
-                  to={item.route}
-                  activeclassname="active"
-                  className="navLink"
-                >
-                  <span
-                    className="material-icons"
-                    style={{
-                      width: "10px",
-                      padding: "0 10px",
-                    }}
-                  >
-                    {item.icon}
-                  </span>
-                  {item.name}
-                </NavLink>
-              ) : (
-                <div
-                  className="navLink"
-                  onClick={() =>
-                    (window.location.href =
-                      "http://chat-portfolio.s3-website.ap-south-1.amazonaws.com/")
-                  }
-                >
-                  <span
-                    className="material-icons"
-                    style={{
-                      width: "10px",
-                      padding: "0 10px",
-                    }}
-                  >
-                    {item.icon}
-                  </span>
-                  {item.name}
-                </div>
-              )}
+        <div className={`nav-items-container ${isMenuOpen ? 'active' : ''}`}>
+          <ul className="nav-list">
+            <li>
+              <NavLink to="https://www.linkedin.com/in/harenderkumardtu/" className="nav-item" target="_blank">
+                <FaLinkedin className="nav-icon" />
+                <span>LinkedIn</span>
+              </NavLink>
             </li>
-          ))}
-        </ul>
+            <li>
+              <NavLink to="https://github.com/harenderk62" className="nav-item" target="_blank">
+                <FaGithub className="nav-icon" />
+                <span>Github</span>
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/about" className="nav-item">
+                <FaUser className="nav-icon" />
+                <span>About Me</span>
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="http://chat-portfolio.s3-website.ap-south-1.amazonaws.com/" className="nav-item">
+                <FaRobot className="nav-icon" />
+                <span>GenAI Chatbot</span>
+              </NavLink>
+            </li>
+          </ul>
+          {/* <button className="sign-in">
+            <HiOutlineLogin className="sign-in-icon" />
+            <span>Sign in</span>
+          </button> */}
+        </div>
+
+        <button 
+          className="mobile-menu-btn"
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+        >
+          <div className={`menu-line ${isMenuOpen ? 'open' : ''}`}></div>
+          <div className={`menu-line ${isMenuOpen ? 'open' : ''}`}></div>
+          <div className={`menu-line ${isMenuOpen ? 'open' : ''}`}></div>
+        </button>
       </div>
-    </div>
+    </nav>
   );
 };
 
-export default SideNav;
+export default NavBar;
