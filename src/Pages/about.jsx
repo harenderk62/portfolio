@@ -94,7 +94,7 @@ const experienceData = [
     location: "Bangalore Urban, Karnataka, India",
     positions: [
       {
-        title: "Data Science Associate",
+        title: "SDE Intern",
         from: "Jan 2022",
         to: "Jun 2022",
         duration: "6 mos",
