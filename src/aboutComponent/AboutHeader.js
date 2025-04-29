@@ -37,7 +37,7 @@ const AboutHeader = ({ isMobile, User, ProfileBackground, resumeHandler }) => {
           <h2 className="title">Software Engineer | Developer | Full Stack</h2>
           <p className="description">
             I'm an experienced Software Developer adept in bringing forth
-            expertise in design, installation, testing and maintenance of
+            expertise in design, deployment, testing and maintenance of
             software systems. Proficient in various platforms and languages
             like MERN stack, Python, and SQL. Experienced with the latest
             cutting-edge development tools and procedures.
