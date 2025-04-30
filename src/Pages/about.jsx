@@ -64,7 +64,8 @@ const skillsData = {
   ],
   Databases: ["MongoDB", "MySQL", "PostgreSQL", "Redis"],
   Miscellaneous: [
-    "AWS Services (EC2, S3, Lambda, SNS, SQS, CodePipeline, CloudWatch)",
+    "AWS Services (EC2, S3, Lambda, SNS, SQS)",
+    "AWS CI/CD pipline services",
     "Kafka",
     "Azure OpenAI",
     "LangChain",
@@ -234,7 +235,7 @@ const projectsData = [
       // "Increased customer engagement by 40%"
     ],
     image: URL_SHORT, // import your image
-    project_url: ""
+    project_url: "https://github.com/harenderk62/urlShortener"
   },
   {
     title: "Automated Portfolio Website with GenAI chatbot",
@@ -272,7 +273,7 @@ const awardsData = [
   },
   {
     id: 3,
-    title: "JEE Mains Top Performer",
+    title: "JEE Mains 2018",
     description: "Achieved a 98 percentile (AIR 14819) in the JEE Mains 2018, where over 13 lakh students appeared.",
     year: "2018",
     organization: "NTA",

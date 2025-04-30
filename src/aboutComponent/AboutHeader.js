@@ -47,8 +47,9 @@ const AboutHeader = ({ isMobile, User, ProfileBackground, resumeHandler }) => {
               className="primary-btn"
               img={Arrow}
               type="button"
-              onClick={resumeHandler}
-              btnName="View Resume"
+              // onClick={resumeHandler}
+              btnName="Download Resume"
+              disable
             />
             {/* <Button
               className="secondary-btn"

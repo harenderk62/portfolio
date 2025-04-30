@@ -1,6 +1,7 @@
 .skills-container {
   max-width: 1200px;
   margin: 2rem auto;
+  padding: 0 1rem; // Added for mobile spacing
 
   .section-title {
     font-size: 2rem;
@@ -68,6 +69,67 @@
       background: #3f51b5;
       color: white;
       transform: translateY(-2px);
+    }
+  }
+
+  // Mobile-specific styles
+  @media screen and (max-width: 768px) {
+    margin: 1.5rem auto;
+    padding: 2rem;
+
+    .section-title {
+      font-size: 1.6rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .skills-columns {
+      gap: 1.25rem;
+    }
+
+    .skill-card {
+      padding: 1.25rem;
+    }
+
+    .card-header {
+      margin-bottom: 0.75rem;
+      
+      .category-title {
+        font-size: 1.15rem;
+      }
+    }
+
+    .skill-pill {
+      padding: 0.4rem 0.8rem;
+      font-size: 0.85rem;
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    .section-title {
+      font-size: 1.4rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .skills-columns {
+      gap: 1rem;
+    }
+
+    .skill-card {
+      padding: 1rem;
+      border-left-width: 3px;
+    }
+
+    .card-header .category-title {
+      font-size: 1.1rem;
+    }
+
+    .skills-horizontal-list {
+      gap: 0.4rem;
+    }
+
+    .skill-pill {
+      padding: 0.35rem 0.7rem;
+      font-size: 0.8rem;
     }
   }
 }
