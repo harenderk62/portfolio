@@ -22,7 +22,8 @@ import {
   CertificationSection,
   ProjectSection,
   PublicationSection,
-  AwardsSection
+  AwardsSection,
+  GeminiChatbot
 } from '../aboutComponent';
 
 // Import data from the new centralized data file
@@ -47,6 +48,7 @@ const MemoizedCertificationSection = React.memo(CertificationSection);
 const MemoizedProjectSection = React.memo(ProjectSection);
 const MemoizedPublicationSection = React.memo(PublicationSection);
 const MemoizedAwardsSection = React.memo(AwardsSection);
+const MemoizedGeminiChatbot = React.memo(GeminiChatbot);
 
 const AboutMe = () => {
   const navigate = useNavigate();
@@ -54,6 +56,17 @@ const AboutMe = () => {
 
   const [showCertification, setShowCertification] = useState(false);
   const [showProjects, setShowProjects] = useState(false);
+
+   // Combine all portfolio data into a single object to pass to the chatbot
+  const allPortfolioData = {
+    skillsData,
+    experienceData,
+    educationData,
+    certificationData,
+    projectsData,
+    awardsData
+  };
+
 
   // Handlers remain in the container component
   const resumeHandler = () => {
@@ -111,6 +124,8 @@ const AboutMe = () => {
         <MemoizedPublicationSection />
 
         <MemoizedAwardsSection awardsData = {awardsData} />
+
+        <MemoizedGeminiChatbot portfolioData={allPortfolioData} />
 
         {/* Modals are now lazy-loaded */}
         <Suspense fallback={<div>Loading Modals...</div>}>

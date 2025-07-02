@@ -24,7 +24,7 @@
 @use '../aboutComponent/ProjectSection';
 @use '../aboutComponent/PublicationSection';
 @use '../aboutComponent/AwardsSection';
+@use '../aboutComponent/GeminiChatbot'; // New: Import GeminiChatbot styles
 
 // 6. Responsive overrides (Import last to ensure they override previous rules)
 @use '../styles/responsive';
-
