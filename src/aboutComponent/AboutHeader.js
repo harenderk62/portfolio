@@ -1,7 +1,7 @@
-import React from 'react';
-import Button from '../Components/button';
-import Social from '../Components/social';
-import Arrow from '../assets/arrow.svg';
+import React from "react";
+import Button from "../Components/button";
+import Social from "../Components/social";
+import Arrow from "../assets/arrow.svg";
 
 const AboutHeader = ({ isMobile, User, ProfileBackground, resumeHandler }) => {
   return (
@@ -27,7 +27,7 @@ const AboutHeader = ({ isMobile, User, ProfileBackground, resumeHandler }) => {
           </div>
         </div>
       )}
-      
+
       <div className="header-content">
         <div className="text-content">
           <div className="title-group">
@@ -36,11 +36,12 @@ const AboutHeader = ({ isMobile, User, ProfileBackground, resumeHandler }) => {
           </div>
           <h2 className="title">Software Engineer | Developer | Full Stack</h2>
           <p className="description">
-            I'm an experienced Software Developer adept in bringing forth
-            expertise in design, deployment, testing and maintenance of
-            software systems. Proficient in various platforms and languages
-            like MERN stack, Python, and SQL. Experienced with the latest
-            cutting-edge development tools and procedures.
+            Highly motivated Software Developer with 3 years of experience in
+            designing, developing, and deploying robust, scalable backend
+            solutions. Proficient in Java, Spring Boot, RESTful APIs, Python,
+            MERN and AWS, with a proven track record of optimizing application
+            performance, enhancing user experience, and driving significant
+            business value through technical excellence.
           </p>
           <div className="action-buttons">
             <Button
@@ -58,7 +59,7 @@ const AboutHeader = ({ isMobile, User, ProfileBackground, resumeHandler }) => {
             /> */}
           </div>
         </div>
-        
+
         {!isMobile && (
           <div className="desktop-profile">
             <img
