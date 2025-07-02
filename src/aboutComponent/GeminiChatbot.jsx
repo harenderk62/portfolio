@@ -80,7 +80,7 @@ const GeminiChatbot = ({ portfolioData }) => { // Added portfolioData prop
   };
 
   return (
-    <div className="gemini-chatbot-container">
+    <div id="gemini-chat-window" className="gemini-chatbot-container"> {/* Added id here */}
       <h2 className="section-title">Ask Me Anything!</h2>
       <div className="chat-window">
         <div className="chat-messages">

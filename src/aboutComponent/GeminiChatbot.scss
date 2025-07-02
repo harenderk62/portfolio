@@ -2,8 +2,14 @@
 
 .gemini-chatbot-container {
   max-width: 800px;
-  margin: 2rem auto;
-  padding: 0 1rem;
+  margin: 0 auto;
+  padding: 6rem 1rem 0 1rem;
+  // Initially hide the chatbot section
+  // This will be overridden by React's conditional rendering
+  // but it's good practice for initial state if not conditionally rendered
+  // directly in JSX, or if it's rendered and then hidden by a class.
+  // In our case, React's conditional rendering handles it, but this
+  // CSS could be used if you wanted to toggle a class instead.
 
   .section-title {
     font-size: 2rem;

@@ -9,9 +9,8 @@ import ProfileBackground from "../assets/profileBackground.jpeg";
 // Back to top FAB
 import Toolbar from "@mui/material/Toolbar";
 
-import "./about.scss";
+import "./home.scss";
 import { useMediaQuery } from "react-responsive";
-
 
 // Import the new section components using the index file
 import {
@@ -50,14 +49,14 @@ const MemoizedPublicationSection = React.memo(PublicationSection);
 const MemoizedAwardsSection = React.memo(AwardsSection);
 const MemoizedGeminiChatbot = React.memo(GeminiChatbot);
 
-const AboutMe = () => {
+const Home = () => { 
   const navigate = useNavigate();
   const isMobile = useMediaQuery({ maxWidth: 768 });
 
   const [showCertification, setShowCertification] = useState(false);
   const [showProjects, setShowProjects] = useState(false);
 
-   // Combine all portfolio data into a single object to pass to the chatbot
+  // Combine all portfolio data into a single object to pass to the chatbot
   const allPortfolioData = {
     skillsData,
     experienceData,
@@ -66,7 +65,6 @@ const AboutMe = () => {
     projectsData,
     awardsData
   };
-
 
   // Handlers remain in the container component
   const resumeHandler = () => {
@@ -96,7 +94,6 @@ const AboutMe = () => {
         <Toolbar id="back-to-top-anchor" />
 
         {/* Render the Header Component */}
-        {/* AboutHeader is not memoized here as it might depend on isMobile which changes */}
         <AboutHeader
           isMobile={isMobile}
           User={User}
@@ -125,6 +122,7 @@ const AboutMe = () => {
 
         <MemoizedAwardsSection awardsData = {awardsData} />
 
+        {/* Conditionally render the Gemini Chatbot section */}
         <MemoizedGeminiChatbot portfolioData={allPortfolioData} />
 
         {/* Modals are now lazy-loaded */}
@@ -154,4 +152,4 @@ const AboutMe = () => {
   );
 };
 
-export default AboutMe;
+export default Home;

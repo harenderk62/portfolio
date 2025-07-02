@@ -1,17 +1,18 @@
 import { useState, useEffect } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom"; // Import useLocation
 import "./sideNav.scss";
 import logo from '../assets/H-removed.webp';
 import { FaGithub, FaLinkedin, FaUser, FaRobot } from 'react-icons/fa';
 import { HiOutlineLogin } from 'react-icons/hi';
 
-const NavBar = () => {
+const NavBar = ({ toggleGeminiChat, showGeminiChat }) => { // Receive toggleGeminiChat and showGeminiChat props
   const [typedText, setTypedText] = useState("");
   const [index, setIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
   const [isSticky, setIsSticky] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  
+  const location = useLocation(); // Get current location
+
   const phrases = [
     "Harender Kumar",
     "Software Developer",
@@ -52,6 +53,19 @@ const NavBar = () => {
     return () => clearTimeout(timeout);
   }, [typedText, index, isDeleting]);
 
+  // Handle click for Gemini Chatbot button
+  const handleGeminiChatClick = () => {
+      setIsMenuOpen(false); // Close mobile menu after clicking
+  };
+
+  // Check session storage on initial load for about page
+  useEffect(() => {
+    if (location.pathname === "/about" && sessionStorage.getItem("showGeminiChatOnAbout") === "true") {
+      toggleGeminiChat();
+      sessionStorage.removeItem("showGeminiChatOnAbout"); // Clean up
+    }
+  }, [location.pathname, toggleGeminiChat]);
+
   return (
     <nav className={`navbar ${isSticky ? 'sticky' : ''}`}>
       <div className="navbar-container">
@@ -82,9 +96,13 @@ const NavBar = () => {
               </NavLink>
             </li>
             <li>
-              <NavLink to="/about" className="nav-item">
-                <FaUser className="nav-icon" />
-                <span>About Me</span>
+              <NavLink
+                to={"/ask-me-anything"}
+                className="nav-item"
+                onClick={handleGeminiChatClick} // Close mobile menu on click
+              >
+                <FaRobot className="nav-icon" />
+                <span>Ask Me Anything!</span>
               </NavLink>
             </li>
             <li>

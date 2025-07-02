@@ -20,7 +20,10 @@ export const skillsData = {
   Language: ["Java", "Python", "JavaScript", "SQL"],
   Frontend: ["ReactJS", "NextJS", "CSS/SCSS", "Redux"],
   Backend: [
-    "Spring Boot (Spring MVC, Spring Data JPA, Spring Security)",
+    "Spring Boot",
+    "Spring MVC",
+    "Spring Data JPA",
+    "Spring Security",
     "Fast API",
     "Flask",
     "RESTful API",
@@ -32,7 +35,9 @@ export const skillsData = {
   ],
   Databases: ["MongoDB", "MySQL", "PostgreSQL", "Redis"],
   Miscellaneous: [
-    "AWS Services (EC2, S3, Lambda, SNS, SQS, CodePipeline, CloudWatch)",
+    "AWS Services (EC2, S3, Lambda, SNS, SQS)",
+    "AWS CloudWatch",
+    "AWS CodePipeline",
     "Kafka",
     "Docker",
     "Nginx",
